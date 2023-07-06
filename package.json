@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "node-sass": "^9.0.0"
+  },
+  "name": "compact-trader",
+  "description": "- Design link: [design link](https://www.figma.com/file/kdmMIQOuHUJaDAspS004eg/Compact-trader?type=design&node-id=0%3A1&mode=design&t=KC8MpoWZT1YK1vYN-1)",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamiuabdulkareem/Compact-Trader.git"
+  },
+  "author": "Jamiu Abidemi Abdulkareem",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jamiuabdulkareem/Compact-Trader/issues"
+  },
+  "homepage": "https://github.com/jamiuabdulkareem/Compact-Trader#readme"
+}
