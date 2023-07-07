@@ -4,7 +4,79 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Compact Trader ~ Dashboard</title>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <div class="header px-20 pt-10 flex items-center justify-between">
+        <h1>Welcome,John</h1>
+        <button>
+          <span>SignOut</span> <ion-icon name="log-in-outline"></ion-icon>
+        </button>
+      </div>
+
+      <nav class="navigation">
+        <ul class="flex items-center justify-between text-center py-8 px-10">
+          <li>
+            <ion-icon class="navigation--icon" name="home-outline"></ion-icon>
+            <span class="navigation--title">Home</span>
+          </li>
+          <li>
+            <ion-icon class="navigation--icon" name="wallet-outline"></ion-icon>
+            <span class="navigation--title">Wallet</span>
+          </li>
+          <li>
+            <ion-icon
+              class="navigation--icon"
+              name="pie-chart-outline"
+            ></ion-icon>
+            <span class="navigation--title">Transaction</span>
+          </li>
+          <li>
+            <ion-icon
+              class="navigation--icon"
+              name="settings-outline"
+            ></ion-icon>
+            <span class="navigation--title">Settings</span>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="px-20">
+      <div class="trade__nav flex items-center gap-8 pt-20">
+        <div class="trade__nav--bal">
+          <h2>Account Balance</h2>
+          <div class="flex items-center gap-4">
+            <p>100.00</p>
+            <ion-icon name="eye-outline"></ion-icon>
+          </div>
+        </div>
+
+        <div class="trade__nav--details">
+          <div class="flex items-center gap-5">
+            <h3>Sell Gift Card</h3>
+            <ion-icon class="gift-card--icon" name="card-outline"></ion-icon>
+          </div>
+        </div>
+
+        <div class="trade__nav--details">
+          <div class="flex items-center gap-5">
+            <h3>Sell Gift Bitcoin</h3>
+            <ion-icon class="btc-icon" name="logo-bitcoin"></ion-icon>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
 </html>

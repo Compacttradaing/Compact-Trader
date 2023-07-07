@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600;700&display=swap");
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+body {
+  font-family: "Roboto Mono", monospace;
+  font-weight: 300;
+  background: #f9f9f9; }
+
+html {
+  font-size: 62.5%; }
+
+span {
+  display: block; }
+
+.header h1 {
+  font-size: 2rem;
+  font-weight: 500; }
+
+.header button {
+  font-size: 2rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; }
+  .header button span {
+    display: inline-block; }
+  .header button ion-icon {
+    color: #d64242; }
+
+.navigation {
+  position: fixed;
+  bottom: 0;
+  background-color: #ebfbef;
+  width: 100%;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); }
+  .navigation--icon {
+    font-size: 2.5rem;
+    color: #555a84; }
+  .navigation--title {
+    font-size: 2rem;
+    color: #555a84; }
+  .navigation li {
+    cursor: pointer; }
+
+.trade__nav--bal {
+  width: 40.3rem;
+  height: 10rem;
+  background-color: #fff;
+  padding: 2rem;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 10px; }
+  .trade__nav--bal h2 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #020410; }
+  .trade__nav--bal p {
+    font-size: 2rem;
+    font-weight: 500; }
+  .trade__nav--bal ion-icon {
+    font-size: 1.6rem;
+    color: #020410;
+    cursor: pointer; }
+
+.trade__nav--details {
+  width: 40.3rem;
+  height: 10rem;
+  background-color: #0c134f;
+  color: #fff;
+  padding: 3rem 6rem 3rem 6rem;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  cursor: pointer; }
+  .trade__nav--details h3 {
+    font-size: 2rem;
+    font-weight: 700; }
+  .trade__nav--details .gift-card--icon {
+    font-size: 2rem;
+    background-color: #3bd85e;
+    padding: 1rem;
+    border-radius: 50%;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); }
+  .trade__nav--details .btc-icon {
+    font-size: 2rem;
+    background-color: #ffa559;
+    padding: 1rem;
+    border-radius: 50%;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); }
