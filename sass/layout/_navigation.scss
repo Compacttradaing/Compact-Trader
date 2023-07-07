@@ -1,0 +1,81 @@
+.navigation {
+  position: fixed;
+  bottom: 0;
+  background-color: $color-primary-light;
+  width: 100%;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+  &--icon {
+    font-size: 2.5rem;
+    color: $color-gray-dark;
+  }
+
+  &--title {
+    font-size: 2rem;
+    color: $color-gray-dark;
+  }
+
+  li {
+    cursor: pointer;
+  }
+}
+
+.trade__nav {
+  &--bal {
+    width: 40.3rem;
+    height: 10rem;
+    background-color: $color-white;
+    padding: 2rem;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: $color-primary-dark;
+    }
+
+    p {
+      font-size: 2rem;
+      font-weight: 500;
+    }
+
+    ion-icon {
+      font-size: 1.6rem;
+      color: $color-primary-dark;
+      cursor: pointer;
+    }
+  }
+
+  &--details {
+    width: 40.3rem;
+    height: 10rem;
+    background-color: $color-primary;
+    color: $color-white;
+    padding: 3rem 6rem 3rem 6rem;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    cursor: pointer;
+
+    h3 {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    .gift-card--icon {
+      font-size: 2rem;
+      background-color: $color-secondary;
+      padding: 1rem;
+      border-radius: 50%;
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    }
+
+    .btc-icon {
+      font-size: 2rem;
+      background-color: $color-tertiary;
+      padding: 1rem;
+      border-radius: 50%;
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    }
+  }
+}
