@@ -90,3 +90,21 @@ span {
     padding: 1rem;
     border-radius: 50%;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); }
+
+.table {
+  width: 124.8rem;
+  height: 40.4rem;
+  margin-top: 3rem;
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2); }
+  .table__head {
+    border-bottom: 1px solid #020410; }
+    .table__head h3 {
+      font-size: 2rem;
+      font-weight: 700; }
+  .table__history:nth-child(:last-child) {
+    margin-bottom: 2rem; }
+  .table__history p {
+    font-size: 1.6rem;
+    font-weight: 400; }

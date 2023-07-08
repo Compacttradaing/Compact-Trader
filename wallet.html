@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Compact Trader ~ Dashboard</title>
+    <title>Compact Trader ~ Wallet</title>
   </head>
   <body>
     <header>
       <div class="header px-20 pt-10 flex items-center justify-between">
-        <h1>Welcome,John</h1>
+        <h1>Wallet</h1>
         <button>
           <span>SignOut</span> <ion-icon name="log-in-outline"></ion-icon>
         </button>
@@ -56,39 +56,36 @@
 
         <div class="trade__nav--details">
           <div class="flex items-center gap-5">
-            <h3>Sell Gift Card</h3>
-            <ion-icon class="gift-card--icon" name="card-outline"></ion-icon>
+            <h3>Withdraw Fund</h3>
+            <ion-icon class="gift-card--icon" name="cash-outline"></ion-icon>
           </div>
         </div>
 
         <div class="trade__nav--details">
           <div class="flex items-center gap-5">
-            <h3>Sell Gift Bitcoin</h3>
+            <h3>Add Bank Account</h3>
             <ion-icon class="btc-icon" name="logo-bitcoin"></ion-icon>
           </div>
         </div>
       </div>
 
       <div class="table px-20">
-        <div class="table__head grid grid-cols-4 py-5 text-center">
-          <h3>All</h3>
-          <h3>Date|Time</h3>
-          <h3>Amount</h3>
-          <h3>Status</h3>
+        <div class="table__head grid grid-cols-3 py-5 text-center">
+          <h3>Name</h3>
+          <h3>Bank name</h3>
+          <h3>Account number</h3>
         </div>
 
-        <div class="table__history grid grid-cols-4 text-center my-10">
-          <p>Withdraw</p>
-          <p>21-01-2023 | 5:00pm</p>
-          <p>50000</p>
-          <p>paid</p>
+        <div class="table__history grid grid-cols-3 text-center my-10">
+          <p>John David</p>
+          <p>Opay</p>
+          <p>8100884411</p>
         </div>
 
-        <div class="table__history grid grid-cols-4 text-center my-10">
-          <p>Withdraw</p>
-          <p>21-01-2023 | 5:00pm</p>
-          <p>50000</p>
-          <p>paid</p>
+        <div class="table__history grid grid-cols-3 text-center my-10">
+          <p>John David</p>
+          <p>Palmpay</p>
+          <p>8100884411</p>
         </div>
       </div>
     </main>
