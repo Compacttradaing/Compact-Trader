@@ -3,7 +3,8 @@
   height: 40.4rem;
   margin-top: 3rem;
   background-color: $color-white;
-  border-radius: 1rem;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
 
   &__head {

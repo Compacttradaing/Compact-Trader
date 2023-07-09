@@ -1,0 +1,38 @@
+.transaction__nav {
+  button {
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: $color-gray-dark;
+    transition: all 0.3s;
+    &:hover {
+      color: $color-primary;
+      border-bottom: 3px solid $color-primary;
+      padding-bottom: 1rem;
+    }
+  }
+
+  .active__btn {
+    color: $color-primary;
+    border-bottom: 3px solid $color-primary;
+    padding-bottom: 1rem;
+  }
+}
+
+.back__btn {
+  padding: 1rem;
+  border-radius: 50px;
+  margin-top: 3rem;
+  margin-left: 2rem;
+  background-color: $color-white;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s;
+
+  &:hover {
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.25);
+  }
+
+  ion-icon {
+    font-size: 3.2rem;
+    color: $color-primary;
+  }
+}
