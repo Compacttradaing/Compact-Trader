@@ -6,10 +6,15 @@
 
 - This is open source project thank you for contribute
 
+## Table of contents
+
+- [Overview](#overview)
+  - [Built with](#built-with)
+
 ### Built with
 
 - Semantic HTML5 markup
 - CSS custom properties
 - CSS Grid
 - SCSS
-- Tailwild css
+- Tailwindd css
