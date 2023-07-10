@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
+    <!-- Tailwind css -->
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Compact Trader ~ Dashboard</title>
   </head>
@@ -15,24 +16,58 @@
   <body>
     <main class="trade">
       <form>
-        <select>
-          <option>Select Categories</option>
+        <!-- <input
+          autocomplete="off"
+          role="combobox"
+          list=""
+          id="input"
+          name="categories"
+          placeholder="Select Categories"
+        />
+
+        <datalist id="categories" role="listbox">
+          <option value="Amazon">Amazon</option>
+          <option value="Steam">Steam</option>
+          <option value="Razer Gold">Razer Gold</option>
+          <option value="Google Play">Google Play</option>
+        </datalist> -->
+
+        <input
+          list="categories"
+          placeholder="Select Categories"
+          autocomplete="off"
+          role="combobox"
+          name="categories"
+        />
+
+        <datalist id="categories" role="listbox">
           <option value="Amazon">Amazon</option>
           <option value="Amazon">Amazon</option>
-        </select>
-        <select>
-          <option>Select Sub-Categories</option>
-          <option value="Amazon">Amazon</option>
-          <option value="Amazon">Amazon</option>
-        </select>
-        <input type="tel" placeholder="Enter Trade Value" />
-        <input type="tel" disabled value="0.00" />
+        </datalist>
+
+        <input list="sub-categories" placeholder="Select Sub-Categories" />
+        <datalist id="sub-categories">
+          <option></option>
+          <option value="Amazon"></option>
+          <option value="Amazon"></option>
+        </datalist>
+
+        <input type="tel" name="trade__value" placeholder="Enter Trade Value" />
+
+        <input type="tel" class="price" disabled value="0.00" />
+
         <label class="label" for="file">Upload card</label>
         <input type="file" id="file" />
-        <textarea cols="10" rows="8"></textarea>
+        <textarea
+          cols="10"
+          rows="8"
+          placeholder="Optional comment, You can type your code here if it's eCode"
+        ></textarea>
+        <button>Submit</button>
       </form>
     </main>
 
+    <!-- Icon script link -->
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
