@@ -3,5 +3,92 @@
   width: 100%;
   position: absolute;
   top: 0;
+  padding-right: 9.6rem;
+  padding-left: 9.6rem;
+
+  //   display: grid;
+  //   place-items: center;
   background-color: rgba(0, 0, 0, 0.4);
+
+  &__box {
+    margin-top: 7.5rem;
+    height: 75vh;
+    padding-right: 6rem;
+    padding-left: 6rem;
+    background-color: $color-white;
+
+    &--nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 4rem;
+
+      h1 {
+        font-size: 2rem;
+        font-weight: 500;
+        color: $color-primary-dark;
+      }
+
+      ion-icon {
+        font-size: 2.4rem;
+        font-weight: 600;
+        color: $color-primary-dark;
+        border-radius: 5rem;
+        cursor: pointer;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        background-color: $color-gray-light;
+        padding: 0.5rem;
+        transition: all 0.2s ease-in;
+
+        &:hover {
+          box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.25);
+        }
+      }
+    }
+
+    form {
+      // background-color: orangered;
+      display: grid;
+      place-items: center;
+      margin-top: 5rem;
+
+      input,
+      select {
+        display: block;
+        background-color: $color-gray-light;
+        margin-bottom: 1.6rem;
+        padding: 1.2rem 3rem;
+        min-width: 83rem;
+        border-radius: 10px;
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: $color-primary;
+        outline: none;
+
+        &::placeholder {
+          color: $color-primary;
+        }
+      }
+
+      button {
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 2.4rem;
+        min-width: 40rem;
+        font-size: 2rem;
+        font-weight: 600;
+        border-radius: 5px;
+        padding: 1.2rem 2rem;
+        color: $color-white;
+        background-color: $color-primary;
+        transition: all 0.3s;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+        &:hover {
+          box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.25);
+        }
+      }
+    }
+  }
 }
