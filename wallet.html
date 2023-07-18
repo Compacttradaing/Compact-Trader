@@ -96,8 +96,9 @@
           <h1>Withdraw Funds</h1>
           <ion-icon name="close-outline"></ion-icon>
         </div>
+
         <!-- Withdraw Form -->
-        <form>
+        <form style="display: none">
           <input type="tel" placeholder="Enter Amount" />
           <select>
             <option>Select Bank</option>
@@ -105,6 +106,15 @@
             <option>Wema Bank</option>
           </select>
           <button>Withdraw</button>
+        </form>
+
+        <!-- Add Bank Account Form -->
+        <form>
+          <input type="text" placeholder="Enter Bank Name" />
+          <input type="tel" placeholder="Enter Account Number" />
+          <input type="text" placeholder="Enter Account Name" />
+
+          <button>Add Account</button>
         </form>
       </div>
     </section>
