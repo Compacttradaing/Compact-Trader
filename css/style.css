@@ -120,6 +120,13 @@ span {
     border-radius: 50%;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); }
 
+.popup {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.4); }
+
 .table {
   width: 124.8rem;
   height: 40.4rem;
