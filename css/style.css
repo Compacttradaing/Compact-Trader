@@ -120,6 +120,77 @@ span {
     border-radius: 50%;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); }
 
+.popup {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  padding-right: 9.6rem;
+  padding-left: 9.6rem;
+  background-color: rgba(0, 0, 0, 0.4); }
+  .popup__box {
+    margin-top: 7.5rem;
+    height: 75vh;
+    padding-right: 6rem;
+    padding-left: 6rem;
+    background-color: #fff; }
+    .popup__box--nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 4rem; }
+      .popup__box--nav h1 {
+        font-size: 2rem;
+        font-weight: 500;
+        color: #020410; }
+      .popup__box--nav ion-icon {
+        font-size: 2.4rem;
+        font-weight: 600;
+        color: #020410;
+        border-radius: 5rem;
+        cursor: pointer;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        background-color: #e7e7ed;
+        padding: 0.5rem;
+        transition: all 0.2s ease-in; }
+        .popup__box--nav ion-icon:hover {
+          box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.25); }
+    .popup__box form {
+      display: grid;
+      place-items: center;
+      margin-top: 5rem; }
+      .popup__box form input,
+      .popup__box form select {
+        display: block;
+        background-color: #e7e7ed;
+        margin-bottom: 1.6rem;
+        padding: 1.2rem 3rem;
+        min-width: 83rem;
+        border-radius: 10px;
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: #0c134f;
+        outline: none; }
+        .popup__box form input::placeholder,
+        .popup__box form select::placeholder {
+          color: #0c134f; }
+      .popup__box form button {
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 2.4rem;
+        min-width: 40rem;
+        font-size: 2rem;
+        font-weight: 600;
+        border-radius: 5px;
+        padding: 1.2rem 2rem;
+        color: #fff;
+        background-color: #0c134f;
+        transition: all 0.3s;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); }
+        .popup__box form button:hover {
+          box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.25); }
+
 .table {
   width: 124.8rem;
   height: 40.4rem;
