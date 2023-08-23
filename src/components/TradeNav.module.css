@@ -76,3 +76,18 @@ h3 {
   border-radius: 50%;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
+
+th {
+  font-size: 1.5rem;
+  color: #020410;
+  font-weight: 700;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #020410;
+}
+
+td {
+  padding-top: 2rem;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
