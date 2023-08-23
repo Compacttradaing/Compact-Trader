@@ -1,0 +1,28 @@
+h1 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+button {
+  font-size: 2rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.icon {
+  color: #d64242;
+}
