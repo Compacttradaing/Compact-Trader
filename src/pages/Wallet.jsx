@@ -2,12 +2,14 @@ import { NavLink } from "react-router-dom";
 import TradeNav from "../components/TradeNav";
 import styles from "../components/TradeNav.module.css";
 import { IoMdAddCircle, IoMdCash } from "react-icons/io";
+import Table from "../components/Table";
+import WithdrawFund from "../components/WithdrawFund";
 
 function Wallet() {
   return (
     <>
       <TradeNav>
-        <NavLink className={styles.nav}>
+        <NavLink className={styles.nav} to="withdraw-funds">
           <h3>Withdraw Fund</h3>
           <IoMdCash className={styles.cardIcon} />
         </NavLink>
@@ -16,6 +18,28 @@ function Wallet() {
           <IoMdAddCircle className={styles.btcIcon} />
         </NavLink>
       </TradeNav>
+
+      <Table>
+        <tr>
+          <th>Name</th>
+          <th>Bank name</th>
+          <th>Account number</th>
+        </tr>
+
+        <tr>
+          <td>John David</td>
+          <td>Access Bank</td>
+          <td>573382328929</td>
+        </tr>
+
+        <tr>
+          <td>John David</td>
+          <td>Access Bank</td>
+          <td>573382328929</td>
+        </tr>
+      </Table>
+
+      <WithdrawFund />
     </>
   );
 }

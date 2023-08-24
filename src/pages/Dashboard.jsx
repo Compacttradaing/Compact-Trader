@@ -30,13 +30,13 @@ function Dashboard() {
           <td>ct6ehaj</td>
           <td>Amazon</td>
           <td>32000</td>
-          <td>Doing</td>
+          <td>Click</td>
         </tr>
         <tr>
           <td>ct6ehaj</td>
           <td>Amazon</td>
           <td>32000</td>
-          <td>Doing</td>
+          <td>Click</td>
         </tr>
       </Table>
     </>
