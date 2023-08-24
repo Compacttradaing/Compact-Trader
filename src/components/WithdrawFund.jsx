@@ -1,6 +1,7 @@
 import Button from "./Button";
 import Popup from "./Popup";
 import styles from "./WithdrawFunds.module.css";
+import Combobox from "react-widgets/Combobox";
 
 function WithdrawFund() {
   return (
@@ -8,10 +9,16 @@ function WithdrawFund() {
       <Popup>
         <h3 className={styles.h3}>Withdraw Funds</h3>
         <form className={styles.form}>
-          <input type="text" placeholder="Enter full name" />
-          <input type="text" placeholder="Enter bank name" />
-          <input type="tel" placeholder="Enter account number" />
-          <Button>Add Bank</Button>
+          {/* <input type="text" placeholder="Enter full name" /> */}
+          <Combobox
+            hideCaret
+            hideEmptyPopup
+            data={["Red", "Yellow", "Blue", "Orange"]}
+            placeholder="Search for a color"
+          />
+
+          <input type="tel" placeholder="Enter Amount" />
+          <Button>Withdraw</Button>
         </form>
       </Popup>
     </>
