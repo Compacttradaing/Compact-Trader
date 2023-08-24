@@ -3,7 +3,6 @@ import TradeNav from "../components/TradeNav";
 import styles from "../components/TradeNav.module.css";
 import { IoMdAddCircle, IoMdCash } from "react-icons/io";
 import Table from "../components/Table";
-import WithdrawFund from "../components/WithdrawFund";
 
 function Wallet() {
   return (
@@ -13,7 +12,7 @@ function Wallet() {
           <h3>Withdraw Fund</h3>
           <IoMdCash className={styles.cardIcon} />
         </NavLink>
-        <NavLink className={styles.nav}>
+        <NavLink className={styles.nav} to="add-bank-account">
           <h3>Add Bank Account</h3>
           <IoMdAddCircle className={styles.btcIcon} />
         </NavLink>
