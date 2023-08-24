@@ -6,6 +6,7 @@ import Wallet from "./pages/Wallet";
 import Dashboard from "./pages/Dashboard";
 import Transaction from "./pages/Transaction";
 import Account from "./pages/Account";
+import PageNotFound from "./pages/PageNotFound";
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
           <Route path="transaction" element={<Transaction />} />
           <Route path="account" element={<Account />} />
         </Route>
+
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
   );
