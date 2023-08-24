@@ -38,8 +38,6 @@ function Wallet() {
           <td>573382328929</td>
         </tr>
       </Table>
-
-      <WithdrawFund />
     </>
   );
 }
