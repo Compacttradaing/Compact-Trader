@@ -1,0 +1,29 @@
+.popup {
+  /* display: block; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.popupContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 124.8rem;
+  height: 50.4rem;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: #ebfbef;
+}
+
+.closeIcon {
+  position: absolute;
+  top: 3rem;
+  right: 4rem;
+  font-size: 2.4rem;
+  color: #0c134f;
+}

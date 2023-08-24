@@ -7,6 +7,7 @@ import Dashboard from "./pages/Dashboard";
 import Transaction from "./pages/Transaction";
 import Account from "./pages/Account";
 import PageNotFound from "./pages/PageNotFound";
+import WithdrawFund from "./components/WithdrawFund";
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
           <Route index element={<Navigate replace to="dashboard" />} />
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="wallet" element={<Wallet />} />
+          {/* <Route path="wallet/withdraw-funds" element={<WithdrawFund />} /> */}
+
           <Route path="transaction" element={<Transaction />} />
           <Route path="account" element={<Account />} />
         </Route>
