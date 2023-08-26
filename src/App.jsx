@@ -9,6 +9,7 @@ import Account from "./pages/Account";
 import PageNotFound from "./pages/PageNotFound";
 import WithdrawFund from "./components/WithdrawFund";
 import AddBank from "./components/AddBank";
+import SellGiftCard from "./components/SellGiftCard";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="app" element={<AppLayout />}>
           <Route index element={<Navigate replace to="dashboard" />} />
           <Route path="dashboard" element={<Dashboard />} />
+          <Route path="dashboard/sell-gift-card" element={<SellGiftCard />} />
           <Route path="wallet" element={<Wallet />} />
           <Route path="wallet/withdraw-funds" element={<WithdrawFund />} />
           <Route path="wallet/add-bank-account" element={<AddBank />} />
