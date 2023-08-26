@@ -14,7 +14,7 @@ function WithdrawFund() {
             hideCaret
             hideEmptyPopup
             data={["Red", "Yellow", "Blue", "Orange"]}
-            placeholder="Search for a color"
+            placeholder="Select bank account"
           />
 
           <input type="tel" placeholder="Enter Amount" />

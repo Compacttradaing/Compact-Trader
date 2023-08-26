@@ -8,7 +8,7 @@ function Dashboard() {
   return (
     <>
       <TradeNav>
-        <NavLink className={styles.nav}>
+        <NavLink className={styles.nav} to="sell-gift-card">
           <h3>Sell Gift Card</h3>
           <IoMdCard className={styles.cardIcon} />
         </NavLink>
