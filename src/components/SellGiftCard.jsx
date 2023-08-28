@@ -3,12 +3,17 @@ import Popup from "./Popup";
 import Button from "./Button";
 
 import styles from "./SellGiftCard.module.css";
+import ImageUpload from "./ImageUpload";
 
 function SellGiftCard() {
+  function handleSubmit(e) {
+    e.preveDefault();
+  }
+
   return (
     <Popup>
       <h3 className={styles.h3}>Sell Gift Card</h3>
-      <form className={styles.form}>
+      <form className={styles.form} onSubmit={handleSubmit}>
         {/* <input type="text" placeholder="Enter full name" /> */}
         <Combobox
           hideCaret
@@ -25,6 +30,7 @@ function SellGiftCard() {
         />
 
         <input type="tel" placeholder="Enter Amount" />
+        <ImageUpload />
         <Button>Submit</Button>
       </form>
     </Popup>
