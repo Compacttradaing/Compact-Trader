@@ -2,7 +2,6 @@
   "name": "compact",
   "private": true,
   "version": "0.0.0",
-  "main": "./src/app.jsx",
   "type": "module",
   "scripts": {
     "dev": "vite -main",
