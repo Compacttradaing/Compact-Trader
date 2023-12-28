@@ -1,10 +1,13 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+
 function App() {
   return (
-    <div>
-      We are launching soon! Subscribe and get notified Notify Me &copy;
-      Copyright Ping. All rights reserved.
-    </div>
-  );
+    <BrowserRouter>
+     <Routes>
+       <Route path="/" element={<h1>hello</h1>} />
+     </Routes>
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App
