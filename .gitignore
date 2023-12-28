@@ -11,7 +11,7 @@ node_modules
 dist
 dist-ssr
 *.local
-prettier.config.js
+*.prettier.config
 
 # Editor directories and files
 .vscode/*
