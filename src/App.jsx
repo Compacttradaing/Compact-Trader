@@ -3,6 +3,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Homepage from "./pages/Homepage";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
+import AppLayout from "./ui/AppLayout";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   const queryClient = new QueryClient();
@@ -12,6 +14,11 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route index element={<Homepage />} />
+
+          <Route path="app" element={<AppLayout />}>
+            <Route index element={<Dashboard />} />
+          </Route>
+
           <Route path="register" element={<Register />} />
           <Route path="login" element={<Login />} />
           <Route path="*" element={<h1>Page not found</h1>} />
