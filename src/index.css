@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .input {
+    @apply w-full px-2 py-2 transition-all duration-300 border-slate-200 bg-slate-50 text-slate-900 border mb-3 focus:ring-1 rounded-lg outline-none focus:ring-indigo-900;
+  }
+}
