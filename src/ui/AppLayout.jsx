@@ -4,7 +4,7 @@ import AppNav from "../features/Dashboard/AppNav";
 
 function AppLayout() {
   return (
-    <div className="bg-slate-50 w-screen h-screen px-20 pt-5">
+    <div className="bg-slate-50 w-screen h-screen px-2 sm:px-20 pt-5">
       <Header />
       <main>
         <Outlet />

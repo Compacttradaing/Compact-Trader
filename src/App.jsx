@@ -5,6 +5,9 @@ import Register from "./pages/Register";
 import Login from "./pages/Login";
 import AppLayout from "./ui/AppLayout";
 import Dashboard from "./pages/Dashboard";
+import Wallet from "./pages/Wallet";
+import Transaction from "./pages/Transaction";
+import Profile from "./pages/Profile";
 
 function App() {
   const queryClient = new QueryClient();
@@ -17,6 +20,9 @@ function App() {
 
           <Route path="app" element={<AppLayout />}>
             <Route index element={<Dashboard />} />
+            <Route path="wallet" element={<Wallet />} />
+            <Route path="transaction" element={<Transaction />} />
+            <Route path="profile" element={<Profile />} />
           </Route>
 
           <Route path="register" element={<Register />} />
