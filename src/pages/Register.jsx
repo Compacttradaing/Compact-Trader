@@ -6,9 +6,9 @@ import FormRow from "../ui/FormRow";
 function Register() {
   return (
     <>
-      <div className="bg-[url('./images/backgroundPatern.png')] bg-indigo-900 bg-blend-multiply h-screen w-screen flex justify-center gap-20 items-center px-40">
-        <div>
-          <h1 className="text-4xl mb-4 w-96 text-slate-50 font-bold">
+      <div className="bg-[url('./images/backgroundPatern.png')] bg-indigo-900 bg-blend-multiply h-screen w-screen flex justify-center gap-20 items-center md:px-40 px-5">
+        <div className="hidden">
+          <h1 className="text-sm sm:text-4xl mb-4 w-96 text-slate-50 font-bold">
             Convert your Gift card and Crypto to cash
           </h1>
           <p className="text-wrap w-80 text-slate-200">
@@ -17,7 +17,7 @@ function Register() {
             and secure transactions.
           </p>
         </div>
-        <form className="bg-slate-50 py-7 px-7 w-96 drop-shadow-xl rounded-md">
+        <form className="bg-slate-50 py-7 w-full px-7 sm:w-96 drop-shadow-xl rounded-md">
           <FormRow>
             <Input type="text" placeholder="First Name" />
           </FormRow>
