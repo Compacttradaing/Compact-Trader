@@ -4,10 +4,10 @@ import Homepage from "./pages/Homepage";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import AppLayout from "./ui/AppLayout";
-import Dashboard from "./pages/Dashboard";
-import Wallet from "./pages/Wallet";
-import Transaction from "./pages/Transaction";
-import Profile from "./pages/Profile";
+import Dashboard from "./pages/Dashboard/Dashboard";
+import Wallet from "./pages/Dashboard/Wallet";
+import Transaction from "./pages/Dashboard/Transaction";
+import Profile from "./pages/Dashboard/Profile";
 
 function App() {
   const queryClient = new QueryClient();
