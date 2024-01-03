@@ -16,17 +16,17 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <Routes>
-          <Route index element={<Homepage />} />
+          <Route path="/" element={<Homepage />} />
 
-          <Route path="app" element={<AppLayout />}>
+          <Route path="/app" element={<AppLayout />}>
             <Route index element={<Dashboard />} />
             <Route path="wallet" element={<Wallet />} />
             <Route path="transaction" element={<Transaction />} />
             <Route path="profile" element={<Profile />} />
           </Route>
 
-          <Route path="register" element={<Register />} />
-          <Route path="login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
           <Route path="*" element={<h1>Page not found</h1>} />
         </Routes>
       </BrowserRouter>
