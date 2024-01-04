@@ -11,13 +11,13 @@ function Wallet() {
         <NavBtn>
           <NaVBtnText>Withdraw Fund</NaVBtnText>
           <div className="NavBtnBg bg-green-400">
-            <IoBusinessSharp className="text-xl" />
+            <IoCashOutline className="text-xl" />
           </div>
         </NavBtn>
         <NavBtn>
           <NaVBtnText>Add Bank Account</NaVBtnText>
           <div className="NavBtnBg bg-yellow-400">
-            <IoCashOutline className="text-xl" />
+            <IoBusinessSharp className="text-xl" />
           </div>
         </NavBtn>
       </div>
