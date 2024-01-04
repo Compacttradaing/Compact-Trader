@@ -6,7 +6,7 @@ import Input from "../ui/Input";
 function Login() {
   return (
     <>
-      <div className="bg-[url('./assets/images/backgroundPatern.png')] bg-indigo-900 bg-blend-multiply h-screen w-screen flex justify-center gap-20 items-center px-5 sm:px-40">
+      <div className="bg-[url('./images/backgroundPatern.png')] bg-indigo-900 bg-blend-multiply h-screen w-screen flex justify-center gap-20 items-center px-5 sm:px-40">
         <form className="bg-slate-50 py-7 px-7 w-full sm:w-96 drop-shadow-xl rounded-md">
           <FormRow>
             <Input type="email" placeholder="Email Address" />
