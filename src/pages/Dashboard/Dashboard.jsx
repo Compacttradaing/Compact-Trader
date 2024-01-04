@@ -17,7 +17,7 @@ function Dashboard() {
         <NavBtn>
           <NaVBtnText>Sell Bitcoin</NaVBtnText>
           <div className="NavBtnBg bg-yellow-400">
-            <IoLogoBitcoin />
+            <IoLogoBitcoin className="text-xl" />
           </div>
         </NavBtn>
       </div>
