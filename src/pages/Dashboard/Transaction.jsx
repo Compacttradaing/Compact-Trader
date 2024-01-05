@@ -1,5 +1,11 @@
+import TransactionTab from "../../features/transaction/TransactionTab";
+
 function Transaction() {
-  return <div>Transaction</div>;
+  return (
+    <div>
+      <TransactionTab />
+    </div>
+  );
 }
 
 export default Transaction;
