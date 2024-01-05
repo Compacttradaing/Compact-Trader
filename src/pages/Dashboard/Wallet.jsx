@@ -4,6 +4,7 @@ import NaVBtnText from "../../features/Dashboard/NaVBtnText";
 import NavBtn from "../../features/Dashboard/NavBtn";
 import TransactionTable from "../../features/transaction/TransactionTable";
 import TransactionHeader from "../../features/transaction/TransactionHeader";
+import TransactionTableRow from "../../features/transaction/TransactionTableRow";
 
 function Wallet() {
   return (
@@ -26,6 +27,7 @@ function Wallet() {
 
       <TransactionTable>
         <TransactionHeader />
+        <TransactionTableRow />
       </TransactionTable>
     </>
   );
