@@ -24,7 +24,7 @@ function Dashboard() {
           </div>
         </NavBtn>
       </div>
-      <TransactionTable>
+      <TransactionTable type="primary">
         <TransactionHeader />
         <TransactionTableRow />
       </TransactionTable>
