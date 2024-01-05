@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 function TransactionTab() {
   return (
     <div className="flex md:gap-80 justify-center mt-5 gap-10 text-lg text-slate-900 font-semibold items-center">
