@@ -2,6 +2,8 @@ import { IoCardOutline, IoLogoBitcoin } from "react-icons/io5";
 import BalanceBtn from "../../features/Dashboard/BalanceBtn";
 import NavBtn from "../../features/Dashboard/NavBtn";
 import NaVBtnText from "../../features/Dashboard/NaVBtnText";
+import TransactionTable from "../../features/transaction/TransactionTable";
+import TransactionHeader from "../../features/transaction/TransactionHeader";
 
 function Dashboard() {
   return (
@@ -21,6 +23,9 @@ function Dashboard() {
           </div>
         </NavBtn>
       </div>
+      <TransactionTable>
+        <TransactionHeader />
+      </TransactionTable>
     </>
   );
 }
