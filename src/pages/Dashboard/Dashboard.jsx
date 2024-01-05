@@ -4,6 +4,7 @@ import NavBtn from "../../features/Dashboard/NavBtn";
 import NaVBtnText from "../../features/Dashboard/NaVBtnText";
 import TransactionTable from "../../features/transaction/TransactionTable";
 import TransactionHeader from "../../features/transaction/TransactionHeader";
+import TransactionTableRow from "../../features/transaction/TransactionTableRow";
 
 function Dashboard() {
   return (
@@ -25,6 +26,7 @@ function Dashboard() {
       </div>
       <TransactionTable>
         <TransactionHeader />
+        <TransactionTableRow />
       </TransactionTable>
     </>
   );
