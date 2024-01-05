@@ -5,6 +5,8 @@ import NavBtn from "../../features/Dashboard/NavBtn";
 import TransactionTable from "../../features/transaction/TransactionTable";
 import TransactionHeader from "../../features/transaction/TransactionHeader";
 import TransactionTableRow from "../../features/transaction/TransactionTableRow";
+import WalletTableHeader from "../../features/Wallet/WalletTableHeader";
+import WalletTableRow from "../../features/Wallet/WalletTableRow";
 
 function Wallet() {
   return (
@@ -25,9 +27,9 @@ function Wallet() {
         </NavBtn>
       </div>
 
-      <TransactionTable>
-        <TransactionHeader />
-        <TransactionTableRow />
+      <TransactionTable type="primary">
+        <WalletTableHeader />
+        <WalletTableRow />
       </TransactionTable>
     </>
   );
