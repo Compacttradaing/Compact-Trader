@@ -1,6 +1,6 @@
 function TransactionHeader() {
   return (
-    <header className="grid grid-cols-6 uppercase font-semibold items-center border-b text-center bg-slate-100 border-slate-300 gap-2 px-2 py-2.5">
+    <header className="grid grid-cols-6 uppercase font-semibold justify-center items-center border-b text-center bg-slate-100 border-slate-300 gap-2.5 px-2 py-2.5">
       <h2 className="capitalize hidden md:block">TradeID</h2>
       <h2>Type</h2>
       <h2>Time</h2>
