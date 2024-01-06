@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function BalanceBtn() {
   return (
-    <div className="flex items-center rounded-xl gap-10 bg-white drop-shadow-sm w-[300px] h-[100px] p-5">
+    <div className="flex items-center justify-between mb-2 sm:mb-0 rounded-xl sm:gap-10 bg-white drop-shadow-sm sm:w-[300px] h-[100px] p-5">
       <div>
         <h3 className="text-sm text-slate-600">Account Balance</h3>
         <div className="flex items-center gap-2">
