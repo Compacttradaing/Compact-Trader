@@ -1,12 +1,46 @@
-import TableBtn from "../../ui/TableBtn";
+import { IoTrash } from "react-icons/io5";
 
 function WalletTableRow() {
   return (
-    <div className="grid grid-cols-4 md:grid-cols-4 text-sm items-center justify-center text-center gap-x-2.5 px-1.5 py-2.5 last:border-b last:border-slate-300">
-      <h2>Access</h2>
-      <h2>John olasebikan</h2>
-      <h2>432887383733</h2>
-      <TableBtn>Edit</TableBtn>
+    <div className="md:mx-10 gap-y-3 px-2 mt-4 grid grid-cols-1 md:grid-cols-3">
+      <div className="bg-yellow-400 md:w-80 px-6 rounded-2xl py-5 text-white">
+        <div className="flex items-center justify-between mb-5">
+          <h1>Access Bank</h1>
+          <button>
+            <IoTrash className="text-lg" />
+          </button>
+        </div>
+        <p className="mb-5 text-xl">8216783456</p>
+        <p>
+          Account name: <span>John Olasebikan</span>
+        </p>
+      </div>
+
+      <div className="bg-yellow-400 md:w-80 px-6 rounded-2xl py-5 text-white">
+        <div className="flex items-center justify-between mb-5">
+          <h1>Access Bank</h1>
+          <button>
+            <IoTrash className="text-lg" />
+          </button>
+        </div>
+        <p className="mb-5 text-xl">8216783456</p>
+        <p>
+          Account name: <span>John Olasebikan</span>
+        </p>
+      </div>
+
+      <div className="bg-yellow-400 md:w-80 px-6 rounded-2xl py-5 text-white">
+        <div className="flex items-center justify-between mb-5">
+          <h1>Access Bank</h1>
+          <button>
+            <IoTrash className="text-lg" />
+          </button>
+        </div>
+        <p className="mb-5 text-xl">8216783456</p>
+        <p>
+          Account name: <span>John Olasebikan</span>
+        </p>
+      </div>
     </div>
   );
 }
