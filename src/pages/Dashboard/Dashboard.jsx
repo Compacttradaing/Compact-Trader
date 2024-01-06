@@ -11,8 +11,6 @@ function Dashboard() {
     <>
       <div className="sm:flex mt-5 px-3 flex-row items-center justify-center md:justify-between sm:mt-10">
         <BalanceBtn />
-        {/* <div className="flex mt-2 sm:mt-0 items-center justify-between"> */}
-        {/* <div className="flex items-center md:gap-32 justify-between"> */}
         <NavBtn>
           <NaVBtnText>Sell Gift Card</NaVBtnText>
           <div className="NavBtnBg bg-green-400">
