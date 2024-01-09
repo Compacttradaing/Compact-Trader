@@ -8,6 +8,7 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import Wallet from "./pages/Dashboard/Wallet";
 import Transaction from "./pages/Dashboard/Transaction";
 import Profile from "./pages/Dashboard/Profile";
+import TradeGiftCard from "./pages/Dashboard/TradeGiftCard";
 
 function App() {
   const queryClient = new QueryClient();
@@ -23,6 +24,8 @@ function App() {
             <Route path="wallet" element={<Wallet />} />
             <Route path="transaction" element={<Transaction />} />
             <Route path="profile" element={<Profile />} />
+
+            <Route path="sell-gift-card" element={<TradeGiftCard />} />
           </Route>
 
           <Route path="/register" element={<Register />} />

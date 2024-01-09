@@ -11,7 +11,7 @@ function Dashboard() {
     <>
       <div className="sm:flex mt-5 px-3 flex-row items-center justify-center md:justify-between sm:mt-10">
         <BalanceBtn />
-        <NavBtn>
+        <NavBtn to="sell-gift-card">
           <NaVBtnText>Sell Gift Card</NaVBtnText>
           <div className="NavBtnBg bg-green-400">
             <IoCardOutline className="text-xl" />
