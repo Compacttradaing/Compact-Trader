@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Select from "react-select";
-import fakeApi from "../../services/fakeApi";
+
 import axios from "axios";
+import Button from "../../ui/Button";
 
 // const options = [
 //   { value: data, label: data },
@@ -41,7 +42,23 @@ function TradeGiftCard() {
             onChange={setSelectedOption}
             options={option}
             placeholder="Select Categories"
+            className="mb-2"
           />
+          <Select
+            defaultValue={selectedOption}
+            onChange={setSelectedOption}
+            options={option}
+            placeholder="Select Sub-Categories"
+            className="mb-2"
+          />
+          <input
+            type="text"
+            className="tradeInput"
+            placeholder="Enter trade amount"
+          />
+          <input type="text" value="#2000" className="tradeInput" disabled />
+          <textarea className="textArea"></textarea>
+          <Button type="secondary">Submit</Button>
         </form>
       </div>
     </div>
