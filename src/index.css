@@ -8,7 +8,11 @@
   }
 
   .tradeInput {
-    @apply w-96 px-2 py-2 transition-all duration-300 border-indigo-200 bg-white text-slate-900 border mb-3 focus:ring-1 rounded-lg outline-none focus:ring-indigo-900;
+    @apply w-96 px-2 py-1.5 transition-all duration-300 border-indigo-200 bg-white text-slate-900 border mb-3 focus:ring-1 rounded-md outline-none focus:ring-indigo-900;
+  }
+
+  .textArea {
+    @apply w-full sm:w-96 rounded-md transition-all duration-300 border-indigo-200 px-2 h-20 resize-none border focus:ring-1 focus:ring-indigo-900 focus:outline-none;
   }
 
   .NavBtnBg {
