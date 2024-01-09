@@ -4,6 +4,7 @@ import Select from "react-select";
 
 import axios from "axios";
 import Button from "../../ui/Button";
+import ImageUpload from "../../ui/ImageUpload";
 
 // const options = [
 //   { value: data, label: data },
@@ -54,6 +55,7 @@ function TradeGiftCard() {
             className="tradeInput"
             placeholder="Enter trade amount"
           />
+          <ImageUpload />
           <input type="text" value="#2000" className="tradeInput" disabled />
           <textarea className="textArea"></textarea>
           <Button type="secondary">Submit</Button>
