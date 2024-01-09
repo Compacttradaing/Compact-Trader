@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+
 import Select from "react-select";
 
 import axios from "axios";
@@ -14,7 +14,6 @@ import Button from "../../ui/Button";
 function TradeGiftCard() {
   const [selectedOption, setSelectedOption] = useState(null);
   const [option, setOption] = useState([""]);
-  const navigate = useNavigate();
 
   useEffect(function () {
     const getData = async () => {
@@ -33,8 +32,7 @@ function TradeGiftCard() {
   }, []);
 
   return (
-    <div className="">
-      <button onClick={() => navigate(-1)}>Go back</button>
+    <>
       <div className="grid place-items-center mt-5">
         <form className="block w-full sm:w-96">
           <Select
@@ -61,7 +59,7 @@ function TradeGiftCard() {
           <Button type="secondary">Submit</Button>
         </form>
       </div>
-    </div>
+    </>
   );
 }
 
