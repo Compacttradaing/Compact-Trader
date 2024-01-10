@@ -5,6 +5,8 @@ import Select from "react-select";
 import axios from "axios";
 import Button from "../../ui/Button";
 import ImageUpload from "../../ui/ImageUpload";
+import { useGiftCard } from "./useGiftCard";
+import supabase, { supabaseKey, supabaseUrl } from "../../services/supabase";
 
 // const options = [
 //   { value: data, label: data },
@@ -14,13 +16,16 @@ import ImageUpload from "../../ui/ImageUpload";
 
 function TradeGiftCard() {
   const [selectedOption, setSelectedOption] = useState(null);
+  const { isLoading, giftcard } = useGiftCard();
   const [option, setOption] = useState([""]);
+
+  console.log(giftcard);
 
   useEffect(function () {
     const getData = async () => {
       const arr = [];
       await axios
-        .get("https://jsonplaceholder.typicode.com/users")
+        .get(`${supabaseUrl}/rest/v1/Country?apikey=${supabaseKey}`)
         .then((res) => {
           let result = res.data;
           result.map((user) => {
