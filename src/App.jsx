@@ -9,6 +9,7 @@ import Wallet from "./pages/Dashboard/Wallet";
 import Transaction from "./pages/Dashboard/Transaction";
 import Profile from "./pages/Dashboard/Profile";
 import TradeGiftCard from "./pages/Dashboard/TradeGiftCard";
+import TradeCrypto from "./pages/Dashboard/TradeCrypto";
 
 function App() {
   const queryClient = new QueryClient();
@@ -26,6 +27,7 @@ function App() {
             <Route path="profile" element={<Profile />} />
 
             <Route path="sell-gift-card" element={<TradeGiftCard />} />
+            <Route path="sell-gift-crypto" element={<TradeCrypto />} />
           </Route>
 
           <Route path="/register" element={<Register />} />
