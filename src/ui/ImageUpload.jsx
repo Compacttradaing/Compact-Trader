@@ -76,13 +76,13 @@ export default function ImageUpload() {
           </span>
         ) : (
           <>
-            Drag & Drop image here or{" "}
+            {/* Drag & Drop image here or{" "} */}
             <span
               className="text-indigo-900 ml-1 transition-all duration-300 cursor-pointer hover:text-indigo-800"
               role="button"
               onClick={selectFiles}
             >
-              Browse
+              Click to upload image
             </span>
           </>
         )}

@@ -55,9 +55,12 @@ function TradeGiftCard() {
             className="tradeInput"
             placeholder="Enter trade amount"
           />
-          <ImageUpload />
           <input type="text" value="#2000" className="tradeInput" disabled />
-          <textarea className="textArea"></textarea>
+          <ImageUpload />
+          <textarea
+            className="textArea"
+            placeholder="You can type the code of your gift card here if it's E-code"
+          ></textarea>
           <Button type="secondary">Submit</Button>
         </form>
       </div>

@@ -17,7 +17,7 @@ function Dashboard() {
             <IoCardOutline className="text-xl" />
           </div>
         </NavBtn>
-        <NavBtn>
+        <NavBtn to="sell-gift-crypto">
           <NaVBtnText>Sell Bitcoin</NaVBtnText>
           <div className="NavBtnBg bg-yellow-400">
             <IoLogoBitcoin className="text-xl" />
