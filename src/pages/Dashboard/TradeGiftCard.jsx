@@ -2,9 +2,13 @@ import { useEffect, useState } from "react";
 
 import Select from "react-select";
 
-import axios from "axios";
 import Button from "../../ui/Button";
 import ImageUpload from "../../ui/ImageUpload";
+import { useCountry } from "./useCountry";
+import { useGiftCards } from "./useGiftCards";
+import getGiftCard from "../../services/apiTrade";
+import { useSearchParams } from "react-router-dom";
+import supabase from "../../services/supabase";
 
 // const options = [
 //   { value: data, label: data },
@@ -14,23 +18,58 @@ import ImageUpload from "../../ui/ImageUpload";
 
 function TradeGiftCard() {
   const [selectedOption, setSelectedOption] = useState(null);
+  const [selectGifcardOption, setSelectGifcardOption] = useState(null);
+  const [countryId, setCountryId] = useState();
   const [option, setOption] = useState([""]);
+  const [gifcardOption, setGifcardOption] = useState([""]);
 
-  useEffect(function () {
-    const getData = async () => {
-      const arr = [];
-      await axios
-        .get("https://jsonplaceholder.typicode.com/users")
-        .then((res) => {
-          let result = res.data;
-          result.map((user) => {
-            return arr.push({ value: user.name, label: user.name });
-          });
-          setOption(arr);
+  const { countries } = useCountry();
+  // const { giftcards } = useGiftCards();
+  // const { giftcardList } = getGiftCard();
+
+  useEffect(
+    function () {
+      function getData() {
+        let arr = [];
+        if (!countries) return [];
+        countries.map((country) => {
+          return arr.push({ value: country.id, label: country.name });
         });
-    };
-    getData();
-  }, []);
+
+        setOption(arr);
+      }
+      getData();
+      if (!selectedOption) return;
+      setCountryId(selectedOption.value);
+    },
+    [countries, selectedOption]
+  );
+
+  useEffect(
+    function () {
+      async function getGiftCard(id) {
+        const { data, error } = await supabase
+          .from("giftcards")
+          .select("*")
+          .eq("country_id", id);
+
+        // console.log(data);
+
+        let arr = [];
+
+        data.map((card) => {
+          return arr.push({ value: card.name, label: card.name });
+        });
+
+        if (!data) return;
+        setGifcardOption(arr);
+        // console.log("arr", arr);
+      }
+      if (!countryId) return;
+      getGiftCard(countryId);
+    },
+    [countryId]
+  );
 
   return (
     <>
@@ -40,14 +79,14 @@ function TradeGiftCard() {
             defaultValue={selectedOption}
             onChange={setSelectedOption}
             options={option}
-            placeholder="Select Categories"
+            placeholder="Select Country"
             className="mb-2"
           />
           <Select
-            defaultValue={selectedOption}
-            onChange={setSelectedOption}
-            options={option}
-            placeholder="Select Sub-Categories"
+            defaultValue={selectGifcardOption}
+            onChange={setSelectGifcardOption}
+            options={gifcardOption}
+            placeholder="Select Gift card"
             className="mb-2"
           />
           <input
