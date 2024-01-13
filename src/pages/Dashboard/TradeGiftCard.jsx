@@ -33,7 +33,7 @@ function TradeGiftCard() {
         let arr = [];
         if (!countries) return [];
         countries.map((country) => {
-          return arr.push({ value: country.id, label: country.name });
+          return arr.push({ value: country.country_id, label: country.name });
         });
 
         setOption(arr);
@@ -41,6 +41,7 @@ function TradeGiftCard() {
       getData();
       if (!selectedOption) return;
       setCountryId(selectedOption.value);
+      console.log(selectedOption);
     },
     [countries, selectedOption]
   );
@@ -53,7 +54,7 @@ function TradeGiftCard() {
           .select("*")
           .eq("country_id", id);
 
-        // console.log(data);
+        console.log(data);
 
         let arr = [];
 
