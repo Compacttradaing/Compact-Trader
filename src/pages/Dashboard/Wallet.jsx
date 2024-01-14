@@ -55,77 +55,7 @@ function Wallet({ close }) {
         <WalletTableHeader />
         <WalletTableRow />
       </TransactionTable>
-
-      {isOpen && (
-        <Modal>
-          <div className="flex items-center justify-between">
-            <h1 className="text-xl font-medium">Withdraw Funds</h1>
-            <span
-              role="button"
-              className="float-right text-2xl p-2 rounded-[100%] bg-slate-300"
-              onClick={handleClose}
-            >
-              <IoCloseOutline />
-            </span>
-          </div>
-          <form className="grid place-items-center mt-5">
-            <div className="w-96">
-              <Select
-                options={options}
-                defaultValue={selectedOption}
-                onChange={setSelectedOption}
-                placeholder="Select Bank Account"
-                className="mb-3"
-              />
-              <input
-                type="tel"
-                placeholder="Enter Amount"
-                className="tradeInput"
-              />
-              <Button type="secondary" className="">
-                Withdraw {"20000"}
-              </Button>
-            </div>
-          </form>
-        </Modal>
-      )}
-
-      {isOpenBank && (
-        <Modal>
-          <div className="flex items-center justify-between">
-            <h1 className="text-xl font-medium">Add Bank Account</h1>
-            <span
-              role="button"
-              className="float-right text-2xl p-2 rounded-[100%] bg-slate-300"
-              onClick={() => setIsopenBank(false)}
-            >
-              <IoCloseOutline />
-            </span>
-          </div>
-          <form className="grid place-items-center mt-5">
-            <div className="w-96">
-              <input
-                type="text"
-                placeholder="Enter Full Name"
-                className="tradeInput"
-              />
-              <input
-                type="text"
-                placeholder="Enter Bank Name"
-                className="tradeInput"
-              />
-              <input
-                type="tel"
-                placeholder="Enter Account Number"
-                className="tradeInput"
-              />
-              <Button type="secondary" className="">
-                Add Bank
-              </Button>
-            </div>
-          </form>
-        </Modal>
-      )}
+      <Modal>hi</Modal>
     </>
   );
 }

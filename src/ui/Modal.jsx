@@ -1,7 +1,7 @@
 function Modal({ children }) {
   return (
-    <div className="fixed z-10 left-0 top-0 w-full h-full overflow-auto bg-slate-900/30">
-      <div className="my-[15%] z-40 mx-auto w-[80%] bg-white p-10 rounded-md">
+    <div className="fixed top-0 left-0 h-screen w-full bg-slate-900/50 z-50 backdrop-blur-sm transition-all duration-300">
+      <div className="fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] bg-white shadow-md rounded-md py-14 px-20 transition-all duration-300">
         {children}
       </div>
     </div>
