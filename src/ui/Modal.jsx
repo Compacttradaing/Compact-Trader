@@ -1,7 +1,12 @@
-function Modal({ children }) {
+import { HiXMark } from "react-icons/hi2";
+
+function Modal({ children, onClose }) {
   return (
-    <div className="fixed z-10 left-0 top-0 w-full h-full overflow-auto bg-slate-900/30">
-      <div className="my-[15%] z-40 mx-auto w-[80%] bg-white p-10 rounded-md">
+    <div className="fixed top-0 left-0 h-screen w-full bg-slate-900/50 z-50 backdrop-blur-sm transition-all duration-300">
+      <div className="fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] bg-white shadow-md rounded-md py-14 sm:px-20 transition-all duration-300 px-5">
+        <button onClick={onClose} className="absolute top-5 right-6 ">
+          <HiXMark className="text-2xl text-slate-900 transition-all duration-300 hover:text-red-500" />
+        </button>
         {children}
       </div>
     </div>
