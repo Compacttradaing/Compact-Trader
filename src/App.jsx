@@ -1,6 +1,5 @@
 import { QueryClient, QueryClientProvider } from "react-query";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Homepage from "./pages/Homepage";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import AppLayout from "./ui/AppLayout";
@@ -11,6 +10,7 @@ import Profile from "./pages/Dashboard/Profile";
 import TradeGiftCard from "./pages/Dashboard/TradeGiftCard";
 import TradeCrypto from "./pages/Dashboard/TradeCrypto";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import Homepage from "./pages/Homepage";
 
 function App() {
   const queryClient = new QueryClient({

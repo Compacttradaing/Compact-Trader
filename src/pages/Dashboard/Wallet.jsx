@@ -10,7 +10,7 @@ import { useState } from "react";
 import WithdrawalModal from "./Wallet/WithdrawalModal";
 import AddBankModal from "./Wallet/AddBankModal";
 
-function Wallet({ close }) {
+function Wallet() {
   const [isOpen, setIsopen] = useState(false);
   const [isOpenBank, setIsopenBank] = useState(false);
 
