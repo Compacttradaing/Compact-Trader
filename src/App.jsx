@@ -11,6 +11,7 @@ import TradeGiftCard from "./pages/Dashboard/TradeGiftCard";
 import TradeCrypto from "./pages/Dashboard/TradeCrypto";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import Homepage from "./pages/Homepage";
+import ProfileSecurity from "./features/Profile/ProfileSecurity";
 
 function App() {
   const queryClient = new QueryClient({
@@ -33,6 +34,7 @@ function App() {
             <Route path="wallet" element={<Wallet />} />
             <Route path="transaction" element={<Transaction />} />
             <Route path="profile" element={<Profile />} />
+            <Route path="profile/settings" element={<ProfileSecurity />} />
 
             <Route path="sell-gift-card" element={<TradeGiftCard />} />
             <Route path="sell-gift-crypto" element={<TradeCrypto />} />
