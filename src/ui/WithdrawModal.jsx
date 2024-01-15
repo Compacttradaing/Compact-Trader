@@ -1,16 +1,14 @@
+// function WithdrawModal({ close }) {
 
+//   const [isOpen, setIsopen] = useState(false);
 
-function WithdrawModal({ close }) {
-  
-  const [isOpen, setIsopen] = useState(false);
+//   function handleClick() {
+//     setIsopen(false);
+//   }
 
-  function handleClick() {
-    setIsopen(false);
-  }
+//   return (
 
-  return (
-    
-  );
-}
+//   );
+// }
 
-export default WithdrawModal;
+// export default WithdrawModal;

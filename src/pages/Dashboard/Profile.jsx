@@ -2,35 +2,32 @@ import ProfileDashborad from "../../features/Profile/ProfileDashborad";
 import TransactionTable from "../../features/transaction/TransactionTable";
 
 import ProfileNavLink from "../../features/Profile/ProfileNavLink";
+import { useState } from "react";
+import Modal from "../../ui/Modal";
+import CustomerSup from "../../features/Profile/CustomerSup";
 
 function Profile() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isOpenAb, setIsOpenAb] = useState(false);
+
   return (
     <>
-      <ProfileDashborad>
-        <div className="flex items-center justify-between">
-          <div className="text-slate-50 text-center">
-            <p>12</p>
-            <h2>Trade</h2>
-          </div>
-          <div className="text-center text-green-400">
-            <p>10</p>
-            <h2>Successful</h2>
-          </div>
-          <div className="text-center text-yellow-400">
-            <p>2</p>
-            <h2>Pending</h2>
-          </div>
-        </div>
-        <em className="mt-5 block text-slate-50">Email: olajohn@email.com</em>
-      </ProfileDashborad>
+      <ProfileDashborad />
+
       <TransactionTable type="secondary">
-        <ProfileNavLink>Security Center</ProfileNavLink>
+        <ProfileNavLink to="settings">Security Center</ProfileNavLink>
         <ProfileNavLink>Invite Friends</ProfileNavLink>
-        <ProfileNavLink>Customer Support</ProfileNavLink>
-        <ProfileNavLink>About Us</ProfileNavLink>
+        <ProfileNavLink onClick={() => setIsOpen(true)}>
+          Customer Support
+        </ProfileNavLink>
+        <ProfileNavLink onClick={() => setIsOpenAb(true)}>
+          About Us
+        </ProfileNavLink>
       </TransactionTable>
+      {isOpen && <CustomerSup onClose={() => setIsOpen(false)} />}
+      {isOpenAb && <Modal onClose={() => setIsOpenAb(false)}>About</Modal>}
     </>
   );
 }
-
+// jj
 export default Profile;

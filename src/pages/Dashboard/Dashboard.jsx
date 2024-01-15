@@ -5,8 +5,12 @@ import NaVBtnText from "../../features/Dashboard/NaVBtnText";
 import TransactionTable from "../../features/transaction/TransactionTable";
 import TransactionHeader from "../../features/transaction/TransactionHeader";
 import TransactionTableRow from "../../features/transaction/TransactionTableRow";
+import { useState } from "react";
+import Status from "../../features/transaction/Status";
 
 function Dashboard() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <>
       <div className="sm:flex mt-5 px-3 flex-row items-center justify-center md:justify-between sm:mt-10">
@@ -28,8 +32,9 @@ function Dashboard() {
       </div>
       <TransactionTable type="primary">
         <TransactionHeader />
-        <TransactionTableRow />
+        <TransactionTableRow onClick={() => setIsOpen(true)} />
       </TransactionTable>
+      {isOpen && <Status onClose={() => setIsOpen(false)} />}
     </>
   );
 }
