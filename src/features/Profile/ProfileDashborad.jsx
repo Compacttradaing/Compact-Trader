@@ -14,8 +14,8 @@ function ProfileDashborad() {
           <p>2</p>
           <h2>Pending</h2>
         </div>
-        <em className="mt-5 block text-slate-50">Email: olajohn@email.com</em>
       </div>
+      <em className="mt-5 block text-slate-50">Email: olajohn@email.com</em>
     </div>
   );
 }
