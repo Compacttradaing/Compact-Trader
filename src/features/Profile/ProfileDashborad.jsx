@@ -1,4 +1,8 @@
+import { useUser } from "../authentication/useUser";
+
 function ProfileDashborad() {
+  const { user, isLoading } = useUser();
+
   return (
     <div className="bg-indigo-900 px-10 py-5 rounded-xl mt-5">
       <div className="flex items-center justify-between">
@@ -15,7 +19,7 @@ function ProfileDashborad() {
           <h2>Pending</h2>
         </div>
       </div>
-      <em className="mt-5 block text-slate-50">Email: olajohn@email.com</em>
+      <em className="mt-5 block text-slate-50">Email: {user.email}</em>
     </div>
   );
 }

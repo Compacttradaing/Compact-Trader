@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function Button({ children, type, to, onClick }) {
+function Button({ children, type, to, onClick, disabled }) {
   const base =
     "bg-indigo-900 text-slate-50 transition-all duration-300 drop-shadow-md";
 
@@ -19,7 +19,7 @@ function Button({ children, type, to, onClick }) {
 
   if (onClick)
     return (
-      <button onClick={onClick} className={styles[type]}>
+      <button disabled={disabled} onClick={onClick} className={styles[type]}>
         {children}
       </button>
     );
