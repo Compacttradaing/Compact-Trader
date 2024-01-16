@@ -14,7 +14,15 @@ function Login() {
   function handleSubmit(e) {
     e.preventDefault();
     if (!email || !password) return;
-    login({ email, password });
+    login(
+      { email, password },
+      {
+        onSettled: () => {
+          setEmail("");
+          setPassword("");
+        },
+      }
+    );
   }
 
   return (
@@ -44,7 +52,9 @@ function Login() {
           />
         </FormRow>
 
-        <Button disabled={isLoading} type="secondary">Sign in</Button>
+        <Button disabled={isLoading} type="secondary">
+          Sign in
+        </Button>
 
         <div>
           <p className="text-sm text-slate-500 mt-4 text-center">
