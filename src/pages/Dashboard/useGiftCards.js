@@ -4,15 +4,14 @@ import { getGiftCard } from "../../services/apiTrade";
 export function useGiftCards() {
   const queryClient = useQueryClient();
 
-  const { isLoading, mutate: giftcards } = useMutation({
+  const { isLoading, mutate: giftcard } = useMutation({
     mutationFn: getGiftCard,
-    onSuccess: () => {
-      queryClient.invalidateQueries({
-        queryKey: ["giftcards"],
-      });
+    onSuccess: (giftcards) => {
+      queryClient.setQueriesData(["giftcards"], giftcards);
+      alert("hi");
     },
     onError: (err) => console.log(err),
   });
 
-  return { isLoading, giftcards };
+  return { isLoading, giftcard };
 }
