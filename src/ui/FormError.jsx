@@ -1,8 +1,6 @@
-function FormError() {
+function FormError({ children }) {
   return (
-    <p className="text-sm hidden text-red-500 font-normal mb-2">
-      Please enter your first name
-    </p>
+    <div className="text-sm  text-red-500 font-normal mb-2">{children}</div>
   );
 }
 
