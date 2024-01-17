@@ -16,7 +16,8 @@ function Register() {
     signup(
       { firstName, lastName, email, phone, password },
       {
-        onSettled: reset,
+        // onSettled: () => reset(),
+        onSettled: () => reset(),
       }
     );
   }
@@ -44,6 +45,7 @@ function Register() {
               id="firstName"
               className="input"
               placeholder="First Name"
+              disabled={isLoading}
               {...register("firstName", { required: "This field is required" })}
             />
             <FormError>{errors?.firstName?.message}</FormError>
@@ -54,6 +56,7 @@ function Register() {
               id="lastName"
               className="input"
               placeholder="Last Name"
+              disabled={isLoading}
               {...register("lastName", { required: "This field is required" })}
             />
             <FormError>{errors?.lastName?.message}</FormError>
@@ -64,6 +67,7 @@ function Register() {
               id="email"
               className="input"
               placeholder="Email Address"
+              disabled={isLoading}
               {...register("email", {
                 required: "This field is required",
                 pattern: {
@@ -80,6 +84,7 @@ function Register() {
               id="phone"
               className="input"
               placeholder="Phone Number"
+              disabled={isLoading}
               {...register("phone", {
                 required: "This field is required",
               })}
@@ -92,6 +97,7 @@ function Register() {
               id="password"
               className="input"
               placeholder="Password"
+              disabled={isLoading}
               {...register("password", {
                 required: "This field is required",
                 maxLength: {
@@ -109,6 +115,7 @@ function Register() {
               id="passwordConfirm"
               className="input"
               placeholder="Confirm Password"
+              disabled={isLoading}
               {...register("passwordCofirm", {
                 required: "This field is required",
                 validate: (value) =>
@@ -118,7 +125,9 @@ function Register() {
             <FormError>{errors?.passwordConfirm?.message}</FormError>
           </FormRow>
 
-          <Button type="secondary">Sign up</Button>
+          <Button disabled={isLoading} type="secondary">
+            Sign up
+          </Button>
 
           <div>
             <p className="text-sm text-slate-500 mt-4 text-center">

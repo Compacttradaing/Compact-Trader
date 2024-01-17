@@ -12,6 +12,23 @@ export async function signup({ firstName, lastName, email, phone, password }) {
       },
     },
   });
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  const { data: userAccountData, error: accountError } = await supabase
+    .from("users")
+    .insert([
+      {
+        user_id: data?.user?.id,
+        balance: 0,
+      },
+    ]);
+
+  if (accountError) {
+    throw new Error(error.message);
+  }
 }
 
 export async function login({ email, password }) {
@@ -30,7 +47,7 @@ export async function getCurrentUser() {
 
   const { data, error } = await supabase.auth.getUser();
 
-  console.log(data);
+  //   console.log(data.user.id);
 
   if (error) throw new Error(error.message);
 

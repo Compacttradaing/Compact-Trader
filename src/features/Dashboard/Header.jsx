@@ -1,12 +1,18 @@
 import { IoCloseOutline } from "react-icons/io5";
 import { useLogOut } from "../authentication/useLogOut";
+import { useUser } from "../authentication/useUser";
+import { useEffect, useState } from "react";
 
 function Header() {
+  // const [firstName, setFirstName] = useState();
+
   const { logout, isLoading } = useLogOut();
+  const { user } = useUser();
+  const { firstName } = user.user_metadata;
 
   return (
     <header className="flex items-center justify-between">
-      <h1 className="font-semibold text-slate-900">Welcome, John</h1>
+      <h1 className="font-semibold text-slate-900">Welcome, {firstName}</h1>
       <button
         disabled={isLoading}
         onClick={logout}
