@@ -1,5 +1,3 @@
-// import { useSearchParams } from "react-router-dom";
-import { useSearchParams } from "react-router-dom";
 import supabase from "./supabase";
 
 export default async function getCountries() {
@@ -25,6 +23,7 @@ export async function getGiftCard(id) {
   }
 
   const giftcardList = data;
+  console.log(data);
 
   return giftcardList;
 }

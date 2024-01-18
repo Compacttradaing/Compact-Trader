@@ -1,7 +1,6 @@
 import { IoCloseOutline } from "react-icons/io5";
 import { useLogOut } from "../authentication/useLogOut";
 import { useUser } from "../authentication/useUser";
-import { useEffect, useState } from "react";
 
 function Header() {
   // const [firstName, setFirstName] = useState();
