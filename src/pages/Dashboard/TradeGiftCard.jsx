@@ -5,46 +5,18 @@ import Select from "react-select";
 import Button from "../../ui/Button";
 import ImageUpload from "../../ui/ImageUpload";
 import { useCountry } from "./useCountry";
-import { useGiftCards } from "./useGiftCards";
-import getGiftCard from "../../services/apiTrade";
-import { useSearchParams } from "react-router-dom";
 import supabase from "../../services/supabase";
-
-// const options = [
-//   { value: data, label: data },
-//   //   { value: "strawberry", label: "Strawberry" },
-//   //   { value: "vanilla", label: "Vanilla" },
-// ];
+import { useGetCountry } from "../../hooks/useGetCountry";
 
 function TradeGiftCard() {
-  const [selectedOption, setSelectedOption] = useState(null);
   const [selectGifcardOption, setSelectGifcardOption] = useState(null);
-  const [countryId, setCountryId] = useState();
-  const [option, setOption] = useState([""]);
+  const [giftcardId, setGiftcardId] = useState("");
   const [gifcardOption, setGifcardOption] = useState([""]);
+  const [amount, setAmount] = useState("");
+  const [rate, setRate] = useState(0);
 
-  const { countries } = useCountry();
-  // const { giftcards } = useGiftCards();
-  // const { giftcardList } = getGiftCard();
-
-  useEffect(
-    function () {
-      function getData() {
-        let arr = [];
-        if (!countries) return [];
-        countries.map((country) => {
-          return arr.push({ value: country.country_id, label: country.name });
-        });
-
-        setOption(arr);
-      }
-      getData();
-      if (!selectedOption) return;
-      setCountryId(selectedOption.value);
-      console.log(selectedOption);
-    },
-    [countries, selectedOption]
-  );
+  const { option, setSelectedOption, countryId, selectedOption } =
+    useGetCountry();
 
   useEffect(
     function () {
@@ -54,22 +26,40 @@ function TradeGiftCard() {
           .select("*")
           .eq("country_id", id);
 
-        console.log(data);
-
         let arr = [];
 
         data.map((card) => {
-          return arr.push({ value: card.name, label: card.name });
+          return arr.push({ value: card.name, label: card.name, id: card.id });
         });
 
         if (!data) return;
         setGifcardOption(arr);
-        // console.log("arr", arr);
       }
       if (!countryId) return;
       getGiftCard(countryId);
+      if (!selectGifcardOption) return;
+      setGiftcardId(selectGifcardOption?.id);
     },
-    [countryId]
+    [countryId, selectGifcardOption]
+  );
+
+  useEffect(
+    function () {
+      async function getPrice(id) {
+        const { data, error } = await supabase
+          .from("price")
+          .select("*")
+          .eq("giftcard_id", id);
+
+        if (error) {
+          throw new Error("Gift card could not been loaded");
+        }
+        const price = data[0]?.rate * amount;
+        setRate(price);
+      }
+      getPrice(giftcardId);
+    },
+    [giftcardId, rate, amount]
   );
 
   return (
@@ -94,8 +84,15 @@ function TradeGiftCard() {
             type="text"
             className="tradeInput"
             placeholder="Enter trade amount"
+            value={amount}
+            onChange={(e) => setAmount(e.target.value)}
           />
-          <input type="text" value="#2000" className="tradeInput" disabled />
+          <input
+            type="text"
+            value={`RATE: ${rate}`}
+            className="tradeInput"
+            disabled
+          />
           <ImageUpload />
           <textarea
             className="textArea"
