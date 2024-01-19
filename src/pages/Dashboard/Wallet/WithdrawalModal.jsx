@@ -14,7 +14,7 @@ function WithdrawalModal({ onClose }) {
       <form>
         <Select
           options={options}
-          className="sm:w-96 mb-3 w-80"
+          className="mb-3 w-80"
           placeholder="Select your bank account"
         />
         <input
@@ -23,7 +23,7 @@ function WithdrawalModal({ onClose }) {
           placeholder="Enter amount"
           required
         />
-        <div className="sm:w-96 w-80">
+        <div className=" w-80">
           <Button type="secondary">Withdraw</Button>
         </div>
       </form>

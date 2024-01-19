@@ -2,6 +2,7 @@ import { useState } from "react";
 import Button from "../../../ui/Button";
 import Modal from "../../../ui/Modal";
 import { useAddBankAccount } from "../../../hooks/useAddBankAccount";
+import { Rings, RotatingLines } from "react-loader-spinner";
 
 function AddBankModal({ onClose }) {
   const [fullName, setFullName] = useState();
@@ -54,9 +55,26 @@ function AddBankModal({ onClose }) {
           required
           disabled={isLoading}
         />
-        <div className="sm:w-96 w-80">
+        <div className="w-80">
           <Button type="secondary" disabled={isLoading}>
-            Withdraw
+            {isLoading ? (
+              <div className="grid place-items-center">
+                <RotatingLines
+                  visible={true}
+                  height="20"
+                  width="20"
+                  color="grey"
+                  strokeColor="#fff"
+                  strokeWidth="5"
+                  animationDuration="0.75"
+                  ariaLabel="rotating-lines-loading"
+                  wrapperStyle={{}}
+                  wrapperClass=""
+                />
+              </div>
+            ) : (
+              "Add Bank"
+            )}
           </Button>
         </div>
       </form>
