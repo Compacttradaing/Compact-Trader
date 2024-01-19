@@ -1,14 +1,14 @@
 import { useMutation, useQueryClient } from "react-query";
-import { deleteBankAccount as deleteBankAccountApi } from "../services/apiAccount";
+import { deleteBankAccount } from "../services/apiAccount";
 import toast from "react-hot-toast";
 
-export async function useDeleteBankAccount() {
+export function useDeleteBankAccount() {
   const queryClient = useQueryClient();
 
-  const { mutate: deleteBankAccount, isLoading } = useMutation({
-    mutationFn: (id) => deleteBankAccountApi(id),
+  const { isLoading, mutate: deleteBank } = useMutation({
+    mutationFn: deleteBankAccount,
     onSuccess: () => {
-      toast.success("Bank successfully deleted");
+      toast.success("Bank successful deleted");
 
       queryClient.invalidateQueries({
         queryKey: ["bank"],
@@ -16,5 +16,6 @@ export async function useDeleteBankAccount() {
     },
     onError: (err) => toast.error(err.message),
   });
-  return { deleteBankAccount, isLoading };
+
+  return { isLoading, deleteBank };
 }

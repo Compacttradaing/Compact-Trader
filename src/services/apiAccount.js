@@ -44,7 +44,9 @@ export async function getBankAccount() {
 }
 
 export async function deleteBankAccount(id) {
-  const { error } = await supabase.from("Bank").delete().eq("id", id);
+  const { data, error } = await supabase.from("Bank").delete().eq("id", id);
 
   if (error) throw new Error(error.message);
+
+  return data;
 }

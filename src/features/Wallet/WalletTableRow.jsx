@@ -2,21 +2,10 @@ import { IoTrash } from "react-icons/io5";
 import { useGetBankAccount } from "../../hooks/useGetBankAccount";
 import XSpinner from "../../ui/XSpinner";
 import { useDeleteBankAccount } from "../../hooks/useDeleteBankAccount";
-import { useEffect, useState } from "react";
 
 function WalletTableRow() {
-  const [bankID, setBankID] = useState("");
   const { bank, isLoading } = useGetBankAccount();
-  const { deleteBankAccount, isLoading: deleteLoading } =
-    useDeleteBankAccount();
-
-  useEffect(
-    function () {
-      console.log(bankID);
-      console.log(deleteBankAccount);
-    },
-    [bankID, deleteBankAccount]
-  );
+  const { isLoading: isDeleting, deleteBank } = useDeleteBankAccount();
 
   if (isLoading) return <XSpinner />;
 
@@ -31,7 +20,7 @@ function WalletTableRow() {
         >
           <div className="flex items-center justify-between mb-5">
             <h1>{banks.bankName}</h1>
-            <button onClick={() => setBankID(banks.id)}>
+            <button disabled={isDeleting} onClick={() => deleteBank(banks.id)}>
               <IoTrash className="text-lg" />
             </button>
           </div>
