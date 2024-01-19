@@ -5,6 +5,7 @@ import FormRow from "../ui/FormRow";
 import { useForm } from "react-hook-form";
 import FormError from "../ui/FormError";
 import { useSignUp } from "../features/authentication/useSignUp";
+import Spinner from "../ui/Spinner";
 
 function Register() {
   const { signup, isLoading } = useSignUp();
@@ -24,6 +25,7 @@ function Register() {
 
   return (
     <>
+      {isLoading && <Spinner />}
       <div className="bg-[url('./images/backgroundPatern.png')] bg-indigo-900 bg-blend-multiply h-screen w-screen flex justify-center gap-20 items-center md:px-40 px-5">
         <div className="hidden">
           <h1 className="text-sm sm:text-4xl mb-4 w-96 text-slate-50 font-bold">
