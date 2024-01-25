@@ -8,8 +8,8 @@ import { useLogin } from "../features/authentication/useLogin";
 import Spinner from "../ui/Spinner";
 
 function Login() {
-  const [email, setEmail] = useState("jamiuabdulkareem08@gmail.com");
-  const [password, setPassword] = useState("90903");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const { login, isLoading } = useLogin();
 
   function handleSubmit(e) {
