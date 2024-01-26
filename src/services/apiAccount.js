@@ -52,21 +52,13 @@ export async function deleteBankAccount(id) {
 }
 
 export async function getTransaction() {
-  const { data, error } = await supabase.from("Transaction").select("*");
-
-  if (error) throw new Error(error.message);
-
-  return data;
-}
-
-export async function getStatus(id) {
+  const { data: curentUser } = await supabase.auth.getUser();
   const { data, error } = await supabase
     .from("Transaction")
     .select("*")
-    .eq("id", id);
+    .eq("user_id", curentUser.user.id);
 
   if (error) throw new Error(error.message);
-  console.log(data);
 
   return data;
 }
