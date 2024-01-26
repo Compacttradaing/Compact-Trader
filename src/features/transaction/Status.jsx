@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Modal from "../../ui/Modal";
-import XSpinner from "../../ui/XSpinner";
 
 function Status({ onClose, statusData }) {
   const [status, setStaus] = useState([]);
