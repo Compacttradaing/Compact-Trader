@@ -13,6 +13,7 @@ function TradeGiftCard() {
   const [giftcardId, setGiftcardId] = useState("");
   const [gifcardOption, setGifcardOption] = useState([""]);
   const [amount, setAmount] = useState("");
+  const [isLoadingGiftCard, setIsLoadingGiftCard] = useState(true);
   const [rate, setRate] = useState(0);
 
   const { option, setSelectedOption, countryId, selectedOption } =
@@ -21,23 +22,30 @@ function TradeGiftCard() {
   useEffect(
     function () {
       async function getGiftCard(id) {
-        const { data, error } = await supabase
-          .from("giftcards")
-          .select("*")
-          .eq("country_id", id);
+        try {
+          const { data } = await supabase
+            .from("giftcards")
+            .select("*")
+            .eq("country_id", id);
 
-        let arr = [];
+          let arr = [];
 
-        data.map((card) => {
-          return arr.push({ value: card.name, label: card.name, id: card.id });
-        });
-
-        if (!data) return;
-        setGifcardOption(arr);
+          data.map((card) => {
+            return arr.push({
+              value: card.name,
+              label: card.name,
+              id: card.id,
+            });
+          });
+          if (!data) return;
+          setGifcardOption(arr);
+        } catch (err) {
+          throw new Error(err);
+        } finally {
+          setIsLoadingGiftCard(false);
+        }
       }
-      if (!countryId) return;
       getGiftCard(countryId);
-      if (!selectGifcardOption) return;
       setGiftcardId(selectGifcardOption?.id);
     },
     [countryId, selectGifcardOption]
@@ -79,6 +87,7 @@ function TradeGiftCard() {
             options={gifcardOption}
             placeholder="Select Gift card"
             className="mb-2"
+            isDisabled={isLoadingGiftCard}
           />
           <input
             type="text"
