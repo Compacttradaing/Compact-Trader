@@ -69,7 +69,7 @@ function Login() {
 
           <div className="flex items-center justify-between mt-3 text-sm">
            <Link to="/register" className="text-indigo-900 hover:text-indigo-600 duration-300 transition-colors">Create An Account</Link>
-           <Link to="/register" className="text-slate-900 hover:text-indigo-600 duration-300 transition-colors">Forget Password</Link>
+           <Link to="/forget-password" className="text-slate-900 hover:text-indigo-600 duration-300 transition-colors">Forget Password</Link>
           </div>
         </form>
        </AuthBox>
