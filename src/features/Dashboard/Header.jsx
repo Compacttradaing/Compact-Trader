@@ -7,7 +7,7 @@ function Header() {
 
   const { logout, isLoading } = useLogOut();
   const { user } = useUser();
-  const { firstName } = user.user_metadata;
+  const firstName = user?.user_metadata?.firstName;
 
   return (
     <header className="flex items-center justify-between">
