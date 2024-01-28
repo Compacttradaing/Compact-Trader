@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import Button from "../../ui/Button";
-import Input from "../../ui/Input";
 import FormRow from "../../ui/FormRow";
 import { useForm } from "react-hook-form";
 import FormError from "../../ui/FormError";
@@ -129,8 +128,8 @@ function Register() {
           </Button>
 
           <div className="flex items-center justify-between mt-3 text-sm">
-           <p>Aready member? <Link to="/register" className="text-indigo-900 hover:text-indigo-600 duration-300 transition-colors">Login</Link></p>
-           <Link to="/register" className="text-slate-900 hover:text-indigo-600 duration-300 transition-colors">Forget Password</Link>
+           <p>Aready member? <Link to="/login" className="text-indigo-900 hover:text-indigo-600 duration-300 transition-colors">Login</Link></p>
+           <Link to="/forget-password" className="text-slate-900 hover:text-indigo-600 duration-300 transition-colors">Forget Password</Link>
           </div>
          </form>
         </AuthBox>

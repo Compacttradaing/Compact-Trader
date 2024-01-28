@@ -14,6 +14,7 @@ import { Toaster } from "react-hot-toast";
 import ProtectedRoutes from "./ui/ProtectedRoutes";
 import Register from "./features/authentication/Register";
 import Login from "./features/authentication/Login";
+import ForgotPassword from "./features/authentication/ForgotPassword";
 
 function App() {
   const queryClient = new QueryClient({
@@ -53,6 +54,7 @@ function App() {
 
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/forget-password" element={<ForgotPassword />} />
             <Route path="*" element={<h1>Page not found</h1>} />
           </Routes>
         </BrowserRouter>
