@@ -3,7 +3,7 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx,}"],
   theme: {
     fontFamily: {
-      sans: "Rubik, sans-serif",
+      sans: "Work Sans, sans-serif",
     },
 
     extend: {},
