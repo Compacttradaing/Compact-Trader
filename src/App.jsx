@@ -1,7 +1,5 @@
 import { QueryClient, QueryClientProvider } from "react-query";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Register from "./pages/Register";
-import Login from "./pages/Login";
 import AppLayout from "./ui/AppLayout";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Wallet from "./pages/Dashboard/Wallet";
@@ -14,6 +12,8 @@ import Homepage from "./pages/Homepage";
 import ProfileSecurity from "./features/Profile/ProfileSecurity";
 import { Toaster } from "react-hot-toast";
 import ProtectedRoutes from "./ui/ProtectedRoutes";
+import Register from "./features/authentication/Register";
+import Login from "./features/authentication/Login";
 
 function App() {
   const queryClient = new QueryClient({

@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom";
-import Button from "../ui/Button";
-import Input from "../ui/Input";
-import FormRow from "../ui/FormRow";
+import Button from "../../ui/Button";
+import Input from "../../ui/Input";
+import FormRow from "../../ui/FormRow";
 import { useForm } from "react-hook-form";
-import FormError from "../ui/FormError";
-import { useSignUp } from "../features/authentication/useSignUp";
-import Spinner from "../ui/Spinner";
+import FormError from "../../ui/FormError";
+import { useSignUp } from "./useSignUp";
+import Spinner from "../../ui/Spinner";
+import AuthBacground from "./AuthBacground";
+import AuthBox from "./AuthBox";
+import AuthHeader from "./AuthHeader";
 
 function Register() {
   const { signup, isLoading } = useSignUp();
@@ -26,20 +29,14 @@ function Register() {
   return (
     <>
       {isLoading && <Spinner />}
-      <div className="bg-[url('./images/backgroundPatern.png')] bg-indigo-900 bg-blend-multiply h-screen w-screen flex justify-center gap-20 items-center md:px-40 px-5">
-        <div className="hidden">
-          <h1 className="text-sm sm:text-4xl mb-4 w-96 text-slate-50 font-bold">
-            Convert your Gift card and Crypto to cash
-          </h1>
-          <p className="text-wrap w-80 text-slate-200">
-            Take pleasure in a flawless experience with our platform, where your
-            peace of mind is ensure of mind is ensured by our commitment to safe
-            and secure transactions.
-          </p>
-        </div>
+      <AuthBacground>
+        <AuthBox>
+          <AuthHeader>
+          Please enter your information
+          </AuthHeader>
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="bg-slate-50 py-7 w-full px-7 sm:w-96 drop-shadow-xl rounded-md"
+          
         >
           <FormRow>
             <input
@@ -102,7 +99,7 @@ function Register() {
               disabled={isLoading}
               {...register("password", {
                 required: "This field is required",
-                maxLength: {
+                minLength: {
                   value: 8,
                   message: "Password needs a minimum of 8 characters",
                 },
@@ -131,19 +128,13 @@ function Register() {
             Sign up
           </Button>
 
-          <div>
-            <p className="text-sm text-slate-500 mt-4 text-center">
-              Already register account,{" "}
-              <Link
-                to="/login"
-                className="text-lg text-slate-900 hover:underline transition-all duration-300"
-              >
-                Sign in
-              </Link>
-            </p>
+          <div className="flex items-center justify-between mt-3 text-sm">
+           <p>Aready member? <Link to="/register" className="text-indigo-900 hover:text-indigo-600 duration-300 transition-colors">Login</Link></p>
+           <Link to="/register" className="text-slate-900 hover:text-indigo-600 duration-300 transition-colors">Forget Password</Link>
           </div>
-        </form>
-      </div>
+         </form>
+        </AuthBox>
+      </AuthBacground>
     </>
   );
 }
