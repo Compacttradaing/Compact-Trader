@@ -79,7 +79,7 @@ function Homepage() {
             </li>
           </ul>
         </section>
-        <section className="md:px-40 px-2 py-20 bg-indigo-500">
+        <section className="md:px-40 px-2 py-20 from-indigo-500 to-indigo-800 bg-gradient-to-r">
           <ul className="flex gap-4 items-center justify-center sm:gap-10 sm:justify-between ">
             <li className="text-center">
               <h2 className="font-bold text-lg text-slate-50 py-2">4000+</h2>
