@@ -1,7 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Header from "../features/Dashboard/Header";
 import AppNav from "../features/Dashboard/AppNav";
-import ProtectedRoutes from "./ProtectedRoutes";
 
 function AppLayout() {
   return (
