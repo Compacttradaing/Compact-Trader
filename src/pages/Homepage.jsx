@@ -79,6 +79,22 @@ function Homepage() {
             </li>
           </ul>
         </section>
+        <section className="md:px-40 px-2 py-20 bg-indigo-500">
+          <ul className="flex gap-4 items-center justify-center sm:gap-10 sm:justify-between ">
+            <li className="text-center">
+              <h2 className="font-bold text-lg text-slate-50 py-2">4000+</h2>
+              <p className="text-slate-50 text-sm">Number of users 4000+</p>
+            </li>
+            <li className="text-center">
+              <h2 className="font-bold text-lg text-slate-50 py-2">$50,000+</h2>
+              <p className="text-slate-50 text-sm">Everyday trading $50,000+</p>
+            </li>
+            <li className="text-center">
+              <h2 className="font-bold text-lg text-slate-50 py-2">2021</h2>
+              <p className="text-slate-50 text-sm">Founded in 2021</p>
+            </li>
+          </ul>
+        </section>
       </main>
     </div>
   );

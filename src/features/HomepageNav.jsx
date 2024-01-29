@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function HomepageNav() {
   return (
     <div className="fixed top-0 z-10 w-screen bg-white drop-shadow-sm">
-      <nav className="z-12 flex items-center justify-between py-5 px-1 sm:px-10">
+      <nav className="z-12 flex items-center justify-between py-5 px-2 sm:px-10">
         <span className="text-xl font-bold text-slate-900">Compact</span>
         <nav>
           <ul className="flex items-center justify-center gap-2">
