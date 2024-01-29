@@ -15,6 +15,10 @@ import ProtectedRoutes from "./ui/ProtectedRoutes";
 import Register from "./features/authentication/Register";
 import Login from "./features/authentication/Login";
 import ForgotPassword from "./features/authentication/ForgotPassword";
+import ResetPassword from "./features/authentication/ResetPassword";
+import AdminPanel from "./pages/Admin/AdminPanel";
+import AdminLayout from "./ui/Admin/AdminLayout";
+import AdminLogin from "./features/Admin/authentication/AdminLogin";
 
 function App() {
   const queryClient = new QueryClient({
@@ -52,9 +56,18 @@ function App() {
               <Route path="sell-gift-crypto" element={<TradeCrypto />} />
             </Route>
 
+            {/* Admin page */}
+            <Route path="/admin">
+              <Route path="panel" element={<AdminLayout />}>
+                <Route index element={<AdminPanel />} />
+              </Route>
+              <Route path="login" element={<AdminLogin />} />
+            </Route>
+
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
             <Route path="/forget-password" element={<ForgotPassword />} />
+            <Route path="/reset-password" element={<ResetPassword />} />
             <Route path="*" element={<h1>Page not found</h1>} />
           </Routes>
         </BrowserRouter>

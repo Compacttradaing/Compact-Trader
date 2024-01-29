@@ -58,3 +58,20 @@ export async function logout() {
 
   return data;
 }
+
+export async function forgotPassword(email) {
+  let { data, error } = await supabase.auth.resetPasswordForEmail(email);
+  if (error) throw new Error(error.message);
+  return data;
+}
+
+export async function updatePassword({ email, password }) {
+  const { data, error } = await supabase.auth.updateUser({
+    email: email,
+    password: password,
+  });
+
+  if (error) throw new Error(error.message);
+
+  return data;
+}
