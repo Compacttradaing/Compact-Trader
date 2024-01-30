@@ -19,6 +19,9 @@ import ResetPassword from "./features/authentication/ResetPassword";
 import AdminPanel from "./pages/Admin/AdminPanel";
 import AdminLayout from "./ui/Admin/AdminLayout";
 import AdminLogin from "./features/Admin/authentication/AdminLogin";
+import AllTrade from "./pages/Admin/AllTrade";
+import OrderList from "./pages/Admin/OrderList";
+import Withdrawal from "./pages/Admin/Withdrawal";
 
 function App() {
   const queryClient = new QueryClient({
@@ -60,6 +63,9 @@ function App() {
             <Route path="/admin">
               <Route path="panel" element={<AdminLayout />}>
                 <Route index element={<AdminPanel />} />
+                <Route path="trade" element={<AllTrade />} />
+                <Route path="orders" element={<OrderList />} />
+                <Route path="withdrawals" element={<Withdrawal />} />
               </Route>
               <Route path="login" element={<AdminLogin />} />
             </Route>

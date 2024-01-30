@@ -15,3 +15,7 @@ function AppLayout() {
 }
 
 export default AppLayout;
+
+{
+  /* <link rel="stylesheet" href="styles.css" /> */
+}
