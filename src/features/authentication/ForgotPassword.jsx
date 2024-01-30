@@ -46,7 +46,7 @@ function ForgotPassword() {
                 placeholder="Email Address"
                 required
               />
-              <FormError>Please enter your email</FormError>
+              {!email && <FormError>Please enter your email</FormError>}
             </FormRow>
             <CheckBox />
             <Button type="secondary">Send</Button>

@@ -18,4 +18,16 @@
   .NavBtnBg {
     @apply py-2 px-2 rounded-full drop-shadow-md hover:-translate-y-1 transition-all duration-300 hover:drop-shadow;
   }
+
+  .navLink {
+    @apply py-2 px-2.5 text-lg text-slate-900 flex items-center gap-1 font-normal rounded-md transition-all duration-300 hover:bg-indigo-900 hover:text-slate-50 active:bg-indigo-900 active:text-slate-50 focus:bg-indigo-900 focus:text-slate-50 focus:outline-none;
+  }
+
+  .column {
+    @apply bg-white p-2.5 rounded-md;
+  }
+
+  .orderTableBtn {
+    @apply hover:bg-indigo-900 hover:text-slate-50 px-0.5 sm:px-4 sm:py-1.5 transition-all duration-300 visited:active:bg-indigo-900 visited:active:text-slate-50 focus:outline-none focus:bg-indigo-900 focus:text-slate-50 rounded-sm;
+  }
 }
