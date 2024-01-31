@@ -4,7 +4,7 @@
 
 @layer components {
   .input {
-    @apply w-full px-2 py-2 transition-all duration-300 border-slate-200 bg-slate-50 text-slate-900 border focus:ring-1 rounded-lg outline-none focus:ring-indigo-900;
+    @apply w-full px-2 py-2 transition-all duration-300 border-slate-200 bg-white text-slate-900 border focus:ring-1 rounded-lg outline-none focus:ring-indigo-900;
   }
 
   .tradeInput {
@@ -12,7 +12,7 @@
   }
 
   .textArea {
-    @apply w-full sm:w-96 rounded-md transition-all duration-300 border-indigo-200 px-2 h-20 resize-none border focus:ring-1 focus:ring-indigo-900 focus:outline-none;
+    @apply w-full sm:w-96 rounded-md transition-all duration-300 border-indigo-200 px-1.5 py-1 h-20 resize-none border focus:ring-1 focus:ring-indigo-900 focus:outline-none;
   }
 
   .NavBtnBg {
