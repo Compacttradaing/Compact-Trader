@@ -1,16 +1,13 @@
 import { useEffect, useState } from "react";
-
 import Select from "react-select";
 
 import Button from "../../ui/Button";
 import ImageUpload from "../../ui/ImageUpload";
-import { useCountry } from "./useCountry";
 import supabase from "../../services/supabase";
 import { useGetCountry } from "../../hooks/useGetCountry";
 
 function TradeGiftCard() {
   const [selectGifcardOption, setSelectGifcardOption] = useState(null);
-  const [giftcardId, setGiftcardId] = useState("");
   const [gifcardOption, setGifcardOption] = useState([""]);
   const [amount, setAmount] = useState("");
   const [isLoadingGiftCard, setIsLoadingGiftCard] = useState(true);
@@ -35,6 +32,7 @@ function TradeGiftCard() {
               value: card.name,
               label: card.name,
               id: card.id,
+              rate: card.rate,
             });
           });
           if (!data) return;
@@ -46,28 +44,18 @@ function TradeGiftCard() {
         }
       }
       getGiftCard(countryId);
-      setGiftcardId(selectGifcardOption?.id);
+      // setGiftcardId(selectGifcardOption?.id);
     },
     [countryId, selectGifcardOption]
   );
 
   useEffect(
     function () {
-      async function getPrice(id) {
-        const { data, error } = await supabase
-          .from("price")
-          .select("*")
-          .eq("giftcard_id", id);
-
-        if (error) {
-          throw new Error("Gift card could not been loaded");
-        }
-        const price = data[0]?.rate * amount;
-        setRate(price);
-      }
-      getPrice(giftcardId);
+      const price = selectGifcardOption?.rate * amount;
+      if (!price) return;
+      setRate(price);
     },
-    [giftcardId, rate, amount]
+    [selectGifcardOption, amount]
   );
 
   return (

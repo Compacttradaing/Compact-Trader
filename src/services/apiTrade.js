@@ -11,19 +11,13 @@ export default async function getCountries() {
   return data;
 }
 
-export async function getGiftCard(id) {
-  const { data, error } = await supabase
-    .from("giftcards")
-    .select("*")
-    .eq("country_id", id);
+export async function getGiftCard() {
+  const { data, error } = await supabase.from("giftcards").select("*");
 
   if (error) {
     console.error(error);
     throw new Error("Gift card could not been loaded");
   }
 
-  const giftcardList = data;
-  console.log(data);
-
-  return giftcardList;
+  return data;
 }
