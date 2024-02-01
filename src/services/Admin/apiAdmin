@@ -1,9 +1,0 @@
-import supabase from "../supabase";
-
-export async function getUserTransaction() {
-  const { data, error } = await supabase.from("Transaction").select("*");
-
-  if (error) throw new Error(error.message);
-
-  return data;
-}

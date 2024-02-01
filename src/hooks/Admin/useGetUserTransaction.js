@@ -7,7 +7,7 @@ export function useGetUserTransaction() {
     queryFn: getUserTransaction,
   });
 
-  console.log(userTransaction);
+  // console.log(userTransaction);
 
   return { userTransaction, isLoading };
 }
