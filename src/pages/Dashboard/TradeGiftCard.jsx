@@ -5,6 +5,8 @@ import Button from "../../ui/Button";
 import ImageUpload from "../../ui/ImageUpload";
 import supabase from "../../services/supabase";
 import { useGetCountry } from "../../hooks/useGetCountry";
+import { useCreateTransaction } from "../../hooks/Admin/useCreateTransaction";
+import { useUser } from "../../features/authentication/useUser";
 
 function TradeGiftCard() {
   const [selectGifcardOption, setSelectGifcardOption] = useState(null);
@@ -12,7 +14,14 @@ function TradeGiftCard() {
   const [amount, setAmount] = useState("");
   const [isLoadingGiftCard, setIsLoadingGiftCard] = useState(true);
   const [rate, setRate] = useState(0);
+  const [images, setImages] = useState([]);
+  // const [imageN, setImageN] = useState();
+  const [e_code, setE_code] = useState("");
 
+  const { createTrans, isCreateTrans } = useCreateTransaction();
+  const { user } = useUser();
+
+  // Country hook
   const { option, setSelectedOption, countryId, selectedOption } =
     useGetCountry();
 
@@ -58,10 +67,33 @@ function TradeGiftCard() {
     [selectGifcardOption, amount]
   );
 
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (!selectedOption || !selectGifcardOption || !amount || !rate || !images)
+      return;
+    const country = selectedOption.value;
+    const type = selectGifcardOption.value;
+    const imageN = images;
+    const fullName = `${user.user_metadata.firstName} ${user.user_metadata.lastName}`;
+    const price = selectGifcardOption?.rate;
+
+    console.log(imageN);
+
+    createTrans({
+      fullName,
+      type,
+      amount,
+      country,
+      imageN,
+      e_code,
+      price,
+    });
+  }
+
   return (
     <>
       <div className="grid place-items-center mt-5">
-        <form className="block w-full sm:w-96">
+        <form onSubmit={handleSubmit} className="block w-full sm:w-96">
           <Select
             defaultValue={selectedOption}
             onChange={setSelectedOption}
@@ -90,10 +122,12 @@ function TradeGiftCard() {
             className="tradeInput"
             disabled
           />
-          <ImageUpload />
+          <ImageUpload images={images} setImages={setImages} />
           <textarea
             className="textArea"
             placeholder="You can type the code of your gift card here if it's E-code"
+            value={e_code}
+            onChange={(e) => setE_code(e.target.value)}
           ></textarea>
           <Button type="secondary">Submit</Button>
         </form>
