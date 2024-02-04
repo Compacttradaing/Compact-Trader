@@ -1,5 +1,5 @@
 import { useMutation } from "react-query";
-import { createTransaction } from "../../services/apiAccount";
+import { createTransaction } from "../services/apiAccount";
 import toast from "react-hot-toast";
 
 export function useCreateTransaction() {

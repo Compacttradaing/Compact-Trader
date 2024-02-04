@@ -5,38 +5,17 @@ import NaVBtnText from "../../features/Dashboard/NaVBtnText";
 import TransactionTable from "../../features/transaction/TransactionTable";
 import TransactionHeader from "../../features/transaction/TransactionHeader";
 import TransactionTableRow from "../../features/transaction/TransactionTableRow";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Status from "../../features/transaction/Status";
-import supabase from "../../services/supabase";
 
 function Dashboard() {
   const [isOpen, setIsOpen] = useState(false);
-  const [tranID, setTranID] = useState("");
-  const [statusData, setStatusData] = useState([]);
+  const [statusData, setStatusData] = useState("");
 
   function handleClick(tran) {
-    setTranID(tran.id);
+    setStatusData(tran);
     setIsOpen(true);
   }
-
-  useEffect(
-    function () {
-      async function getStatus(id) {
-        const { data, error } = await supabase
-          .from("Transaction")
-          .select("*")
-          .eq("id", id);
-
-        if (error) throw new Error(error.message);
-
-        if (!data) return;
-        setStatusData(data);
-      }
-      if (!tranID) return;
-      getStatus(tranID);
-    },
-    [tranID]
-  );
 
   return (
     <>

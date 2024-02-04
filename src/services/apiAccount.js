@@ -81,9 +81,6 @@ export async function createTransaction({
     return `${supabaseUrl}/storage/v1/object/public/Trade/${i}`;
   });
 
-  console.log(imageName);
-  console.log(imagePath);
-
   const { data: curentUser } = await supabase.auth.getUser();
 
   const { data, error } = await supabase
