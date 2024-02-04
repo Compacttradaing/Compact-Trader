@@ -1,6 +1,5 @@
 import { IoBarChartOutline } from "react-icons/io5";
 import OrderTable from "../../ui/Admin/OrderTable";
-import Modal from "../../ui/Modal";
 import { useState } from "react";
 import UpdateStatusModal from "../../features/Admin/UpdateStatusModal";
 import UpdateBalModal from "../../features/Admin/UpdateBalModal";
@@ -8,6 +7,8 @@ import UpdateBalModal from "../../features/Admin/UpdateBalModal";
 function AdminPanel() {
   const [isOpenS, setIsOpenS] = useState(false);
   const [isOpenBal, setIsOpenBal] = useState(false);
+  const [transaction, setTrantransaction] = useState("");
+
   return (
     <div>
       <ul className="grid grid-cols-1 sm:grid-cols-4 items-center gap-3">
@@ -61,8 +62,14 @@ function AdminPanel() {
       <OrderTable
         onOpenS={() => setIsOpenS(true)}
         onOpenBal={() => setIsOpenBal(true)}
+        setTransaction={setTrantransaction}
       />
-      {isOpenS && <UpdateStatusModal onClose={() => setIsOpenS(false)} />}
+      {isOpenS && (
+        <UpdateStatusModal
+          transaction={transaction}
+          onClose={() => setIsOpenS(false)}
+        />
+      )}
       {isOpenBal && <UpdateBalModal onClose={() => setIsOpenBal(false)} />}
     </div>
   );

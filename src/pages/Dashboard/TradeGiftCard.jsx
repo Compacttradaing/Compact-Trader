@@ -5,8 +5,9 @@ import Button from "../../ui/Button";
 import ImageUpload from "../../ui/ImageUpload";
 import supabase from "../../services/supabase";
 import { useGetCountry } from "../../hooks/useGetCountry";
-import { useCreateTransaction } from "../../hooks/Admin/useCreateTransaction";
+import { useCreateTransaction } from "../../hooks/useCreateTransaction";
 import { useUser } from "../../features/authentication/useUser";
+import Spinner from "../../ui/Spinner";
 
 function TradeGiftCard() {
   const [selectGifcardOption, setSelectGifcardOption] = useState(null);
@@ -15,13 +16,10 @@ function TradeGiftCard() {
   const [isLoadingGiftCard, setIsLoadingGiftCard] = useState(true);
   const [rate, setRate] = useState(0);
   const [images, setImages] = useState([]);
-  // const [imageN, setImageN] = useState();
   const [e_code, setE_code] = useState("");
 
   const { createTrans, isCreateTrans } = useCreateTransaction();
   const { user } = useUser();
-
-  // Country hook
   const { option, setSelectedOption, countryId, selectedOption } =
     useGetCountry();
 
@@ -77,18 +75,30 @@ function TradeGiftCard() {
     const fullName = `${user.user_metadata.firstName} ${user.user_metadata.lastName}`;
     const price = selectGifcardOption?.rate;
 
-    console.log(imageN);
-
-    createTrans({
-      fullName,
-      type,
-      amount,
-      country,
-      imageN,
-      e_code,
-      price,
-    });
+    createTrans(
+      {
+        fullName,
+        type,
+        amount,
+        country,
+        imageN,
+        e_code,
+        price,
+      },
+      {
+        onSettled: () => {
+          setAmount("");
+          setRate(0);
+          setSelectGifcardOption(null);
+          setSelectedOption(null);
+          setE_code("");
+          setImages([]);
+        },
+      }
+    );
   }
+
+  if (isCreateTrans) return <Spinner />;
 
   return (
     <>
