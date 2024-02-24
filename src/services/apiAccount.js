@@ -21,7 +21,8 @@ export async function addBankAccount({ fullName, bankName, accountNumber }) {
     .insert([
       { user_id: curentUser?.user?.id, fullName, bankName, accountNumber },
     ])
-    .select();
+    .select()
+    .order("date");
 
   if (error) {
     throw new Error(error.message);
@@ -102,6 +103,7 @@ export async function createTransaction({
       { onConflict: ["id"] }
     )
     .select();
+  // .order("date");
 
   if (error) {
     console.error(error);
