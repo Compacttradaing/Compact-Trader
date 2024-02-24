@@ -2,6 +2,7 @@ import supabase from "./supabase";
 
 export default async function getCountries() {
   const { data, error } = await supabase.from("countries").select("*");
+  // .order("date");
 
   if (error) {
     console.error(error);
@@ -12,7 +13,10 @@ export default async function getCountries() {
 }
 
 export async function getGiftCard() {
-  const { data, error } = await supabase.from("giftcards").select("*");
+  const { data, error } = await supabase
+    .from("giftcards")
+    .select("*")
+    .order("created_at", { ascending: false });
 
   if (error) {
     console.error(error);

@@ -1,13 +1,18 @@
 import supabase, { supabaseUrl } from "../supabase";
 
+// Getting all users transaction to admin
 export async function getUserTransaction() {
-  const { data, error } = await supabase.from("Transaction").select("*");
+  const { data, error } = await supabase
+    .from("Transaction")
+    .select("*")
+    .order("created_at", { ascending: false });
 
   if (error) throw new Error(error.message);
 
   return data;
 }
 
+// Adding new trade offer
 export async function addOffer({ country, giftcardName, rate }) {
   const { data, error } = await supabase
     .from("giftcards")
@@ -19,6 +24,7 @@ export async function addOffer({ country, giftcardName, rate }) {
   return data;
 }
 
+// Editing the users transaction
 export async function editUserTansaction({ status, reply, imageUrl, id }) {
   const hasImagePath = imageUrl?.startsWith?.(supabaseUrl);
   const randomId = Math.random();

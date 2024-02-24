@@ -5,14 +5,19 @@ import { useGiftCards } from "../Dashboard/useGiftCards";
 import Spinner from "../../ui/Spinner";
 import { useState } from "react";
 import AddOffer from "../../features/Admin/Trade/AddOffer";
-import { useCountry } from "../Dashboard/useCountry";
+import Filter from "../../ui/Admin/Filter";
+import { useSearchParams } from "react-router-dom";
 
 function AllTrade() {
   const [isOpenOffer, setIsOpenOffer] = useState(false);
+  const [searchParams] = useSearchParams();
   const { giftcards, isLoading } = useGiftCards();
-  const { countries, isLoading: isLoadCountry } = useCountry();
 
-  if (isLoading || isLoadCountry) return <Spinner />;
+  const filterValue = searchParams.get("country") || "USA";
+
+  let filterCountry;
+
+  if (isLoading) return <Spinner />;
 
   return (
     <>
@@ -22,16 +27,7 @@ function AllTrade() {
             Latest Orders
           </h3>
           <div className="text-sm flex gap-2 items-center sm:font-medium">
-            <select className="border-slate-500 border px-0.5 sm:px-4 sm:py-1.5 rounded-sm focus:outline-none">
-              {countries.map((country) => (
-                <option key={country.id} value={country.country_id}>
-                  {country.country_id}
-                </option>
-              ))}
-              {/* <option value="All">All</option>
-              <option value="USA">USA</option>
-              <option value="USA">USA</option> */}
-            </select>
+            <Filter />
             <button
               className="bg-indigo-900 text-slate-50 px-0.5 sm:px-4 sm:py-1.5 transition-all duration-300 focus:outline-none focus:bg-indigo-900 focus:text-slate-50 rounded-sm flex items-center gap-1"
               onClick={() => setIsOpenOffer(true)}
