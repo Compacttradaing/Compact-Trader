@@ -3,19 +3,29 @@ import TradeTableHead from "../../ui/Admin/TradeTableHead";
 import TradeTableRow from "../../ui/Admin/TradeTableRow";
 import { useGiftCards } from "../Dashboard/useGiftCards";
 import Spinner from "../../ui/Spinner";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import AddOffer from "../../features/Admin/Trade/AddOffer";
 import Filter from "../../ui/Admin/Filter";
 import { useSearchParams } from "react-router-dom";
 
 function AllTrade() {
   const [isOpenOffer, setIsOpenOffer] = useState(false);
+  const [cards, setCards] = useState([]);
   const [searchParams] = useSearchParams();
   const { giftcards, isLoading } = useGiftCards();
 
   const filterValue = searchParams.get("country") || "USA";
 
-  let filterCountry;
+  // Filter the offer country
+  useEffect(
+    function () {
+      const giftCard = giftcards?.filter(
+        (item) => item.country_id === filterValue
+      );
+      setCards(giftCard);
+    },
+    [giftcards, filterValue]
+  );
 
   if (isLoading) return <Spinner />;
 
@@ -39,7 +49,7 @@ function AllTrade() {
         </div>
 
         <TradeTableHead />
-        {giftcards.map((offer) => (
+        {cards.map((offer) => (
           <TradeTableRow key={offer.id} offer={offer} />
         ))}
       </div>
