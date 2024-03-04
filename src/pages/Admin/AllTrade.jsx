@@ -7,11 +7,13 @@ import { useEffect, useState } from "react";
 import AddOffer from "../../features/Admin/Trade/AddOffer";
 import Filter from "../../ui/Admin/Filter";
 import { useSearchParams } from "react-router-dom";
+import UpdateTradeModal from "../../features/Admin/UpdateTradeModal";
 
 function AllTrade() {
   const [isOpenOffer, setIsOpenOffer] = useState(false);
   const [cards, setCards] = useState([]);
   const [searchParams] = useSearchParams();
+  const [isOpen, setIsOpen] = useState(false);
   const { giftcards, isLoading } = useGiftCards();
 
   const filterValue = searchParams.get("country") || "USA";
@@ -49,11 +51,16 @@ function AllTrade() {
         </div>
 
         <TradeTableHead />
-        {cards.map((offer) => (
-          <TradeTableRow key={offer.id} offer={offer} />
+        {cards?.map((offer) => (
+          <TradeTableRow
+            key={offer.id}
+            offer={offer}
+            onModal={() => setIsOpen(true)}
+          />
         ))}
       </div>
       {isOpenOffer && <AddOffer onClose={() => setIsOpenOffer(false)} />}
+      {isOpen && <UpdateTradeModal isClose={() => setIsOpen(false)} />}
     </>
   );
 }
