@@ -128,7 +128,9 @@ function TradeGiftCard() {
           />
           <input
             type="text"
-            value={`RATE: ${rate}`}
+            value={`RATE: ${
+              selectGifcardOption?.rate === 0 ? "No offer" : rate
+            }`}
             className="tradeInput"
             disabled
           />

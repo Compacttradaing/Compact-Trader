@@ -14,6 +14,7 @@ function AllTrade() {
   const [cards, setCards] = useState([]);
   const [searchParams] = useSearchParams();
   const [isOpen, setIsOpen] = useState(false);
+  const [offerId, setOfferId] = useState("");
   const { giftcards, isLoading } = useGiftCards();
 
   const filterValue = searchParams.get("country") || "USA";
@@ -56,11 +57,14 @@ function AllTrade() {
             key={offer.id}
             offer={offer}
             onModal={() => setIsOpen(true)}
+            editId={setOfferId}
           />
         ))}
       </div>
       {isOpenOffer && <AddOffer onClose={() => setIsOpenOffer(false)} />}
-      {isOpen && <UpdateTradeModal isClose={() => setIsOpen(false)} />}
+      {isOpen && (
+        <UpdateTradeModal isClose={() => setIsOpen(false)} id={offerId} />
+      )}
     </>
   );
 }

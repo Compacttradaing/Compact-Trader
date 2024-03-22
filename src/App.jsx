@@ -1,4 +1,6 @@
-import { QueryClient, QueryClientProvider } from "react-query";
+// import { QueryClient, QueryClientProvider } from "react-query";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AppLayout from "./ui/AppLayout";
 import Dashboard from "./pages/Dashboard/Dashboard";
@@ -7,7 +9,8 @@ import Transaction from "./pages/Dashboard/Transaction";
 import Profile from "./pages/Dashboard/Profile";
 import TradeGiftCard from "./pages/Dashboard/TradeGiftCard";
 import TradeCrypto from "./pages/Dashboard/TradeCrypto";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+// import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+// import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import Homepage from "./pages/Homepage";
 import ProfileSecurity from "./features/Profile/ProfileSecurity";
 import { Toaster } from "react-hot-toast";
@@ -36,7 +39,7 @@ function App() {
   return (
     <>
       <QueryClientProvider client={queryClient}>
-        {/* <ReactQueryDevtools initialIsOpen={false} /> */}
+        <ReactQueryDevtools initialIsOpen={false} />
         <BrowserRouter>
           <Routes>
             <Route index element={<Homepage />} />
