@@ -1,4 +1,4 @@
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 import { getTransaction } from "../services/apiAccount";
 
 export function useGetTransaction() {

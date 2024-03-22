@@ -56,6 +56,7 @@ function UpdateStatusModal({ onClose, transaction }) {
             className="tradeInput block w-80"
             type="text"
             value={status}
+            placeholder="status"
             onChange={(e) => setStatus(e.target.value)}
             disabled={isEdit}
           />

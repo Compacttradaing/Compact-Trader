@@ -1,4 +1,4 @@
-import { useMutation, useQueryClient } from "react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { deleteBankAccount } from "../services/apiAccount";
 import toast from "react-hot-toast";
 

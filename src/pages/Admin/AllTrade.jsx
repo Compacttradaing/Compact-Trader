@@ -3,19 +3,32 @@ import TradeTableHead from "../../ui/Admin/TradeTableHead";
 import TradeTableRow from "../../ui/Admin/TradeTableRow";
 import { useGiftCards } from "../Dashboard/useGiftCards";
 import Spinner from "../../ui/Spinner";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import AddOffer from "../../features/Admin/Trade/AddOffer";
 import Filter from "../../ui/Admin/Filter";
 import { useSearchParams } from "react-router-dom";
+import UpdateTradeModal from "../../features/Admin/UpdateTradeModal";
 
 function AllTrade() {
   const [isOpenOffer, setIsOpenOffer] = useState(false);
+  const [cards, setCards] = useState([]);
   const [searchParams] = useSearchParams();
+  const [isOpen, setIsOpen] = useState(false);
+  const [offerId, setOfferId] = useState("");
   const { giftcards, isLoading } = useGiftCards();
 
   const filterValue = searchParams.get("country") || "USA";
 
-  let filterCountry;
+  // Filter the offer country
+  useEffect(
+    function () {
+      const giftCard = giftcards?.filter(
+        (item) => item.country_id === filterValue
+      );
+      setCards(giftCard);
+    },
+    [giftcards, filterValue]
+  );
 
   if (isLoading) return <Spinner />;
 
@@ -39,11 +52,19 @@ function AllTrade() {
         </div>
 
         <TradeTableHead />
-        {giftcards.map((offer) => (
-          <TradeTableRow key={offer.id} offer={offer} />
+        {cards?.map((offer) => (
+          <TradeTableRow
+            key={offer.id}
+            offer={offer}
+            onModal={() => setIsOpen(true)}
+            editId={setOfferId}
+          />
         ))}
       </div>
       {isOpenOffer && <AddOffer onClose={() => setIsOpenOffer(false)} />}
+      {isOpen && (
+        <UpdateTradeModal isClose={() => setIsOpen(false)} id={offerId} />
+      )}
     </>
   );
 }

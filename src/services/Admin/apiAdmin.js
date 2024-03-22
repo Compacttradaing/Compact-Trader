@@ -24,6 +24,17 @@ export async function addOffer({ country, giftcardName, rate }) {
   return data;
 }
 
+// Edit offer rates
+export async function editRate({ newRate, id }) {
+  const { error } = await supabase
+    .from("giftcards")
+    .update({ rate: newRate })
+    .eq("id", id)
+    .select();
+
+  if (error) throw new Error(error.message);
+}
+
 // Editing the users transaction
 export async function editUserTansaction({ status, reply, imageUrl, id }) {
   const hasImagePath = imageUrl?.startsWith?.(supabaseUrl);

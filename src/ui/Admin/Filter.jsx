@@ -13,7 +13,7 @@ function Filter() {
       setSearchParams(searchParams);
       // console.log(options);
     },
-    [options]
+    [options, setSearchParams, searchParams]
   );
 
   if (isLoadCountry) return <h1>loading....</h1>;
