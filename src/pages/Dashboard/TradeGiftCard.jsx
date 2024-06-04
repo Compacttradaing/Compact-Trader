@@ -26,6 +26,7 @@ function TradeGiftCard() {
   useEffect(
     function () {
       async function getGiftCard(id) {
+        setIsLoadingGiftCard(true);
         try {
           const { data } = await supabase
             .from("giftcards")
@@ -44,6 +45,7 @@ function TradeGiftCard() {
           });
           if (!data) return;
           setGifcardOption(arr);
+          // console.log(gifcardOption);
         } catch (err) {
           throw new Error(err);
         } finally {
