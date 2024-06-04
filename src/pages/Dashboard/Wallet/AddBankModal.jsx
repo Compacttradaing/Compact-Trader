@@ -3,6 +3,7 @@ import Button from "../../../ui/Button";
 import Modal from "../../../ui/Modal";
 import { useAddBankAccount } from "../../../hooks/useAddBankAccount";
 import { Rings, RotatingLines } from "react-loader-spinner";
+import XSpinner from "../../../ui/XSpinner";
 
 function AddBankModal({ onClose }) {
   const [fullName, setFullName] = useState();
@@ -24,6 +25,8 @@ function AddBankModal({ onClose }) {
       }
     );
   }
+
+  // if (isLoading) return <XSpinner />;
 
   return (
     <Modal onClose={onClose}>
@@ -59,7 +62,7 @@ function AddBankModal({ onClose }) {
           <Button type="secondary" disabled={isLoading}>
             {isLoading ? (
               <div className="grid place-items-center">
-                <RotatingLines
+                {/* <RotatingLines
                   visible={true}
                   height="20"
                   width="20"
@@ -70,7 +73,8 @@ function AddBankModal({ onClose }) {
                   ariaLabel="rotating-lines-loading"
                   wrapperStyle={{}}
                   wrapperClass=""
-                />
+                /> */}
+                loading
               </div>
             ) : (
               "Add Bank"

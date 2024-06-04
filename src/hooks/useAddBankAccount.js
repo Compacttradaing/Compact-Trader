@@ -1,16 +1,16 @@
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useMutation } from "@tanstack/react-query";
 import { addBankAccount } from "../services/apiAccount";
 import toast from "react-hot-toast";
 
 export function useAddBankAccount() {
-  const queryClient = useQueryClient();
+  // const queryClient = useQueryClient();
 
   const { mutate: bank, isLoading } = useMutation({
     mutationFn: ({ fullName, bankName, accountNumber }) =>
       addBankAccount({ fullName, bankName, accountNumber }),
 
     onSuccess: (bank) => {
-      queryClient.setQueryData(["bank"], bank);
+      // queryClient.setQueryData(["bank"], bank);
       toast.success("Bank add successfully");
     },
     onError: (err) => {
